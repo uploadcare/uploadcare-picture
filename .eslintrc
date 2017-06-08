@@ -1,0 +1,32 @@
+{
+  "extends": "uploadcare",
+  "plugins": ["react", "compat"],
+  "parser": "babel-eslint",
+  "rules": {
+    "compat/compat": 2,
+    "global-require": [0],
+    "import/no-unresolved": [0],
+    "no-unused-vars": [0],
+    "react/jsx-boolean-value": [0],
+    "react/jsx-closing-bracket-location": [2, "after-props"],
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
+    "react/jsx-no-bind": [0],
+    "react/jsx-space-before-closing": [0],
+    "react/no-multi-comp": [0],
+    "react/prop-types": [0],
+    "react/sort-comp": [0],
+    "react/wrap-multilines": [0],
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "Faye": true
+  },
+  "settings": {
+    "polyfills": ["fetch"]
+  }
+}
