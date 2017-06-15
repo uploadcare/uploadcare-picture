@@ -1,3 +1,4 @@
+/* eslint-disable max-nested-callbacks */
 import {buildCDNUrl, buildFormat, maxNumber, buildResize, buildWidthNumber} from '../modules/build-cdn-url'
 
 const uuid = '18d1c520-c52d-4c34-82a0-7e07dcbcf105'
@@ -26,12 +27,12 @@ describe('buildWidthNumber', () => {
 
 describe('buildResize', () => {
   test('undefined options', () => {
-    expect(() => { // eslint-disable-line max-nested-callbacks
+    expect(() => {
       buildResize('2x')
     }).toThrow()
   })
   test('resize wrong format', () => {
-    expect(() => { // eslint-disable-line max-nested-callbacks
+    expect(() => {
       buildResize('wrong format', {width: 1000})
     }).toThrow()
   })
@@ -88,6 +89,16 @@ describe('buildResize', () => {
     const expected = '-/resize/3000x/'
 
     expect(resize).toBe(expected)
+  })
+  test('resize 2x (without width)', () => {
+    const options = {
+      oversize: 'wrong oversize',
+      max_resize: 3000,
+    }
+
+    expect(() => {
+      buildResize('2x', options)
+    }).toThrow('Please set width')
   })
 })
 

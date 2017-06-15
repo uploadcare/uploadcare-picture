@@ -60,6 +60,12 @@ describe('buildPixelDensity', () => {
 
     expect(buildPixelDensity(pd)).toEqual(expected)
   })
+  test('pixel-density as number (1x)', () => {
+    const pd = 1
+    const expected = ['2x']
+
+    expect(buildPixelDensity(pd)).toEqual(expected)
+  })
   test('pixel-density as string', () => {
     const pd = '300w'
     const expected = ['300w']

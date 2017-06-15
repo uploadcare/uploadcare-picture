@@ -15,6 +15,15 @@ describe('getSources', () => {
 
     expect(getSources(uuid, options)).toEqual(expected)
   })
+  test('sources not need', () => {
+    const options = {
+      sizes: {},
+      formats: [],
+    }
+    const expected = null
+
+    expect(getSources(uuid, options)).toEqual(expected)
+  })
   test('one format', () => {
     const options = {formats: ['jpg']}
     const expected = [
