@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+
+language: node_js
+node_js:
+  - '6.11'
+
+before_install:
+  - sudo apt-get -qq update
+
+install:
+  - sudo apt-get install yarn
+
+
+before_script:
+  - yarn install
+
+script:
+  - yarn test
