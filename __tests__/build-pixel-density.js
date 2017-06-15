@@ -1,4 +1,4 @@
-import {buildPixelDensity, pixelDensityFromNumber} from '../modules/build-pixel-density'
+import {buildPixelDensity, pixelDensityFromNumber, pixelDensityFromString} from '../modules/build-pixel-density'
 
 describe('pixelDensityFromNumber', () => {
   test('pixel density as number', () => {
@@ -25,6 +25,26 @@ describe('pixelDensityFromNumber', () => {
     expect(() => { // eslint-disable-line max-nested-callbacks
       pixelDensityFromNumber('string')
     }).toThrow()
+  })
+})
+
+describe('pixelDensityFromString', () => {
+  test('pixel density as string (300w)', () => {
+    expect(pixelDensityFromString('300w')).toBe('300w')
+  })
+  test('pixel density as string (3x)', () => {
+    expect(pixelDensityFromString('3x')).toBe('3x')
+  })
+  test('pixel density as string (300)', () => {
+    expect(pixelDensityFromString('300')).toBe('300')
+  })
+  test('pixel density as string (3)', () => {
+    expect(pixelDensityFromString('3')).toBe('3')
+  })
+  test('pixel density as string (wrong)', () => {
+    expect(() => { // eslint-disable-line max-nested-callbacks
+      pixelDensityFromString('wrong')
+    }).toThrow('pixel density must be a number')
   })
 })
 

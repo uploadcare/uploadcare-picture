@@ -17,6 +17,21 @@ export function pixelDensityFromNumber(number) {
 }
 
 /**
+ * [pixelDensityFromString description]
+ * @param  {[type]} string [description]
+ * @return {[type]}        [description]
+ */
+export function pixelDensityFromString(string) {
+  if ((/\d+\w?$/gi).test(string)) {
+    return string
+  }
+  else {
+    console.log(string)
+    return pixelDensityFromNumber(parseInt(string))
+  }
+}
+
+/**
  * [buildPixelDensityArray description]
  * @param  {[type]} pd [description]
  * @return {[type]}    [description]
@@ -30,7 +45,7 @@ export function buildPixelDensity(pd) {
     pdArray = pixelDensityFromNumber(pdCount === 1 ? 2 : pdCount)
   }
   else if (typeof pd === 'string') {
-    pdArray = [pd]
+    pdArray = [pixelDensityFromString(pd)]
   }
   else if (pd.length > 0) {
     pdArray = pd
