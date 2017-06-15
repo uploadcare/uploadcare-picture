@@ -18,31 +18,37 @@ export function buildWidth(sizes) {
  * @return {[type]}         [description]
  */
 export function buildSource(uuid, options) {
-  const src = buildSrc(uuid, {
-    width: buildWidth(options.sizes),
-    oversize: options.oversize,
-    max_resize: options.max_resize,
-    format: options.format,
-  })
-  const srcset = buildSrcSet(uuid, {
-    src,
-    width: buildWidth(options.sizes),
-    pixel_density: options.pixel_density,
-    oversize: options.oversize,
-    max_resize: options.max_resize,
-    format: options.format,
-  })
-  const source = {
-    type: options.format ? `image/${options.format}` : null,
-    media: options.media === 'default'
+  const sourceNotNeeded = Boolean(!options.format && options.media === 'default')
+
+  if (!sourceNotNeeded) {
+    const src = buildSrc(uuid, {
+      width: buildWidth(options.sizes || options.width),
+      oversize: options.oversize,
+      max_resize: options.max_resize,
+      format: options.format,
+      name: options.name,
+    })
+    const srcset = buildSrcSet(uuid, {
+      src,
+      width: buildWidth(options.sizes || options.width),
+      pixel_density: options.pixel_density,
+      oversize: options.oversize,
+      max_resize: options.max_resize,
+      format: options.format,
+      name: options.name,
+    })
+    const source = cleanKeys({
+      type: options.format ? `image/${options.format}` : null,
+      media: options.media === 'default'
       ? null
       : options.media,
-    sizes: options.sizes,
-    src,
-    srcset,
-  }
+      sizes: options.sizes,
+      src,
+      srcset,
+    })
 
-  return cleanKeys(source)
+    return source
+  }
 }
 
 /**
@@ -55,8 +61,8 @@ export function getSources(uuid, opts) { // eslint-disable-line max-statements
   if (!opts || Object.keys(opts).length <= 0) return null
   if (!opts.sizes && !opts.formats) return null
 
+  let sources = []
   const options = buildOptions(opts)
-  const sources = []
   const formatsLength = options.formats ? options.formats.length : 1
   const sizesKeys = options.sizes ? Object.keys(options.sizes) : []
   const sizesLength = sizesKeys.length || 1
@@ -66,13 +72,15 @@ export function getSources(uuid, opts) { // eslint-disable-line max-statements
   let sourcesLength = formatsLength * sizesLength
 
   for (let ind = 0; ind < sourcesLength; ind++) {
+    const format = options.formats ? options.formats[formatsIndex] : null
+    const media = options.sizes ? sizesKeys[sizesIndex] : null
+    const sizes = options.sizes ? options.sizes[sizesKeys[sizesIndex]] : null
+
     sources.push(buildSource(uuid, {
-      format: options.formats ? options.formats[formatsIndex] : null,
-      media: options.sizes ? sizesKeys[sizesIndex] : null,
-      sizes: options.sizes ? options.sizes[sizesKeys[sizesIndex]] : null,
-      pixel_density: options.pixel_density,
-      oversize: options.oversize,
-      max_resize: options.max_resize,
+      ...options,
+      format,
+      media,
+      sizes,
     }))
 
     if (sizesIndex < sizesLength - 1) {
@@ -90,7 +98,7 @@ export function getSources(uuid, opts) { // eslint-disable-line max-statements
     }
   }
 
-  // console.log(sources)
+  sources = sources.filter(source => !!source)
 
   return sources.length > 0 ? sources : null
 }
