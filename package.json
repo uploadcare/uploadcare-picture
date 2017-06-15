@@ -26,11 +26,11 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "codecov": "^2.2.0",
-    "eslint": "^3.19.0",
+    "eslint": "^4.0.0",
     "eslint-config-uploadcare": "^1.1.0",
     "eslint-plugin-compat": "^1.0.2",
     "eslint-plugin-react": "^7.0.1",
-    "jest": "^20.0.4",
-    "identity-obj-proxy": "^3.0.0"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^20.0.4"
   }
 }

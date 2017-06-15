@@ -2,6 +2,9 @@
   "extends": "uploadcare",
   "plugins": ["react", "compat"],
   "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+  },
   "rules": {
     "compat/compat": 2,
     "global-require": [0],
