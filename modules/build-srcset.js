@@ -14,6 +14,7 @@ export function checkLastDensity(uuid, last, opts) {
     oversize: opts.oversize,
     max_resize: opts.max_resize,
     format: opts.format,
+    name: opts.name,
   })
 
   return current === last ? null : current
@@ -42,7 +43,6 @@ function checkSrcSet(opts) {
 export function buildSrcSet(uuid, opts) {
   let srcset = ''
   let last = opts.src
-
   const needSrcSet = checkSrcSet(opts)
 
   if (needSrcSet) {
@@ -53,9 +53,10 @@ export function buildSrcSet(uuid, opts) {
         oversize: opts.oversize,
         max_resize: opts.max_resize,
         format: opts.format,
+        name: opts.name,
       })
 
-      if (needAddDensity) {
+      if (!!needAddDensity) {
         last = needAddDensity
         srcset += `${last} ${density}, `
       }

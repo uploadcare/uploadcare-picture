@@ -12,5 +12,6 @@ export function buildSrc(uuid, opts) {
     oversize: opts.oversize,
     max_resize: opts.max_resize,
     format: opts.format,
+    name: opts.name,
   })
 }
