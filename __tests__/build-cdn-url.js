@@ -1,19 +1,7 @@
-import {buildName, buildCDNUrl, buildFormat, maxNumber, buildResize, buildWidthNumber} from '../modules/build-cdn-url'
+import {buildCDNUrl, buildFormat, maxNumber, buildResize, buildWidthNumber} from '../modules/build-cdn-url'
 
 const uuid = '18d1c520-c52d-4c34-82a0-7e07dcbcf105'
 const cdnurl = `https://ucarecdn.com/${uuid}/`
-
-describe('buildName', () => {
-  test('only name', () => {
-    expect(buildName(null, 'example')).toBe('example')
-  })
-  test('only format', () => {
-    expect(buildName('jpg', null)).toBe('')
-  })
-  test('name and format', () => {
-    expect(buildName('jpg', 'example')).toBe('example.jpg')
-  })
-})
 
 describe('buildWidthNumber', () => {
   test('width as number', () => {

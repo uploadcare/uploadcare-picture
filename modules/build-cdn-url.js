@@ -1,15 +1,4 @@
-/**
- * [buildName description]
- * @param  {[type]} name [description]
- * @param  {[type]} fmt  [description]
- * @return {[type]}      [description]
- */
-export function buildName(fmt, nm) {
-  const format = fmt ? `.${fmt}` : ''
-  const name = nm ? `${nm}${format}` : ''
-
-  return name
-}
+import {buildName} from './build-name'
 
 /**
  * [buildFormat description]
