@@ -6,6 +6,7 @@
     "compat/compat": 2,
     "global-require": [0],
     "import/no-unresolved": [0],
+    "no-plusplus": [0],
     "no-unused-vars": [0],
     "react/jsx-boolean-value": [0],
     "react/jsx-closing-bracket-location": [2, "after-props"],
@@ -22,9 +23,6 @@
     "browser": true,
     "node": true,
     "es6": true
-  },
-  "globals": {
-    "Faye": true
   },
   "settings": {
     "polyfills": ["fetch"]
