@@ -1,6 +1,6 @@
 {
   "name": "uploadcare-picture",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "repository": "https://github.com/uploadcare/responsive-picture.git",
   "author": "Alexander Kurganov <akurganow@uploadcare.com>",
