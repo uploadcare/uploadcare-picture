@@ -148,14 +148,4 @@ describe('getImage', () => { // eslint-disable-line max-statements
 
     expect(getImage(uuid, options)).toEqual(expected)
   })
-  test('width and pixel_density not array', () => {
-    const options = {
-      width: 1024,
-      pixel_density: 2,
-    }
-
-    expect(() => { // eslint-disable-line max-nested-callbacks
-      getImage(uuid, options)
-    }).toThrow()
-  })
 })

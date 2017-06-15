@@ -1,6 +1,7 @@
 import {buildOptions} from './build-options'
 import {buildSrc} from './build-src'
 import {buildSrcSet} from './build-srcset'
+import {buildName} from './build-name'
 import {cleanKeys} from './clean-keys'
 
 /**
@@ -21,22 +22,35 @@ export function buildWidth(width) {
  * @return {Object}
  */
 export function getImage(uuid, opts) {
-  if (opts && opts.pixel_density && !opts.pixel_density.length) throw Error('pixel_density must be an array')
-
   const options = buildOptions(opts)
-  const src = buildSrc(uuid, options)
+
+  if (options && options.pixel_density && !options.pixel_density.length) throw Error('pixel_density must be an array')
+
+  const sizes = options.sizes && options.sizes.default
+    ? options.sizes.default
+    : null
+  const width = options.width || (options.sizes && options.sizes.default)
+  const src = buildSrc(uuid, {
+    ...options,
+    width,
+  })
   const srcset = buildSrcSet(uuid, {
     src,
-    width: options.width,
+    width,
     pixel_density: options.pixel_density,
     oversize: options.oversize,
     max_resize: options.max_resize,
+    format: options.format,
+    name: options.name,
   })
-  const width = buildWidth(options.width)
+  const alt = buildName(null, options.name) || null
+  const imageWidth = buildWidth(options.width)
   const image = cleanKeys({
+    sizes,
     src,
     srcset,
-    width,
+    width: imageWidth,
+    alt,
   })
 
   return image
