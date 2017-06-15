@@ -29,6 +29,11 @@ describe('pixelDensityFromNumber', () => {
 })
 
 describe('buildPixelDensity', () => {
+  test('pixel-density wrong format', () => {
+    expect(() => { // eslint-disable-line max-nested-callbacks
+      buildPixelDensity({})
+    }).toThrow()
+  })
   test('pixel-density as number', () => {
     const pd = 3
     const expected = ['2x', '3x']
