@@ -24,8 +24,6 @@ export function buildWidth(width) {
 export function getImage(uuid, opts) {
   const options = buildOptions(opts)
 
-  if (options && options.pixel_density && !options.pixel_density.length) throw Error('pixel_density must be an array')
-
   const sizes = options.sizes && options.sizes.default
     ? options.sizes.default
     : null

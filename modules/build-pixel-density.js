@@ -26,7 +26,6 @@ export function pixelDensityFromString(string) {
     return string
   }
   else {
-    console.log(string)
     return pixelDensityFromNumber(parseInt(string))
   }
 }
