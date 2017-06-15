@@ -2,10 +2,8 @@
 
 import {getPictureObject, checkWarnsEnv} from '../modules/get-picture-object'
 
-global.console = {
-  warn: jest.fn(),
-  info: jest.fn(),
-}
+global.console.warn = jest.fn()
+global.console.info = jest.fn()
 
 const uuid = '18d1c520-c52d-4c34-82a0-7e07dcbcf105'
 const cdnurl = `https://ucarecdn.com/${uuid}/`
@@ -180,7 +178,7 @@ describe('format and name', () => {
     const options = {name: 'example'}
     const expected = {
       image: {
-        src: `${cdnurl}/-/format/auto/example`,
+        src: `${cdnurl}-/format/auto/example`,
         alt: 'example',
       },
     }
@@ -491,6 +489,86 @@ describe('formats and sizes', () => {
         },
       ],
       image: {src: `${cdnurl}/-/format/auto/`},
+    }
+
+    expect(getPictureObject(uuid, options)).toEqual(expected)
+  })
+  test('three sizes and three formats', () => {
+    const options = {
+      sizes: {
+        '(max-width: 1024px)': '768px',
+        '(min-width: 1025px)': '1024px',
+        'default': '1280px',
+      },
+      formats: ['jpg', 'webp', 'png'],
+    }
+    const expected = {
+      sources: [
+        {
+          src: `${cdnurl}-/resize/768x/-/format/jpg/`,
+          srcset: `${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+          media: '(max-width: 1024px)',
+          type: 'image/jpg',
+          sizes: '768px',
+        },
+        {
+          src: `${cdnurl}-/resize/1024x/-/format/jpg/`,
+          srcset: `${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
+          media: '(min-width: 1025px)',
+          type: 'image/jpg',
+          sizes: '1024px',
+        },
+        {
+          src: `${cdnurl}-/resize/1280x/-/format/jpg/`,
+          srcset: `${cdnurl}-/resize/2560x/-/format/jpg/ 2x`,
+          type: 'image/jpg',
+          sizes: '1280px',
+        },
+        {
+          src: `${cdnurl}-/resize/768x/-/format/webp/`,
+          srcset: `${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
+          media: '(max-width: 1024px)',
+          type: 'image/webp',
+          sizes: '768px',
+        },
+        {
+          src: `${cdnurl}-/resize/1024x/-/format/webp/`,
+          srcset: `${cdnurl}-/resize/2048x/-/format/webp/ 2x`,
+          media: '(min-width: 1025px)',
+          type: 'image/webp',
+          sizes: '1024px',
+        },
+        {
+          src: `${cdnurl}-/resize/1280x/-/format/webp/`,
+          srcset: `${cdnurl}-/resize/2560x/-/format/webp/ 2x`,
+          type: 'image/webp',
+          sizes: '1280px',
+        },
+        {
+          src: `${cdnurl}-/resize/768x/-/format/png/`,
+          srcset: `${cdnurl}-/resize/1536x/-/format/png/ 2x`,
+          media: '(max-width: 1024px)',
+          type: 'image/png',
+          sizes: '768px',
+        },
+        {
+          src: `${cdnurl}-/resize/1024x/-/format/png/`,
+          srcset: `${cdnurl}-/resize/2048x/-/format/png/ 2x`,
+          media: '(min-width: 1025px)',
+          type: 'image/png',
+          sizes: '1024px',
+        },
+        {
+          src: `${cdnurl}-/resize/1280x/-/format/png/`,
+          srcset: `${cdnurl}-/resize/2560x/-/format/png/ 2x`,
+          type: 'image/png',
+          sizes: '1280px',
+        },
+      ],
+      image: {
+        src: `${cdnurl}/-/format/auto/`,
+        width: '1280px',
+      },
     }
 
     expect(getPictureObject(uuid, options)).toEqual(expected)
@@ -818,8 +896,8 @@ describe('real examples', () => {
       ],
       image: {
         src: `${cdnurl}-/resize/1024x/-/format/auto/`,
-        srcset: `${cdnurl}-/resize/1536x/-/format/auto/ 2x, ${cdnurl}-/resize/2304x/-/format/auto/ 3x, ${cdnurl}-/resize/3000x/-/format/auto/ 4x`,
-        sizes: '768px',
+        srcset: `${cdnurl}-/resize/2048x/-/format/auto/ 2x, ${cdnurl}-/format/auto/ 3x`,
+        sizes: '1024px',
       },
     }
 

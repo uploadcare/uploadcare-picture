@@ -45,7 +45,7 @@ export function getPictureObject(uuid, opts) { // eslint-disable-line max-statem
   const image = getImage(uuid, opts)
 
   if (!!image) picture.image = cleanKeys(image)
-  if (!!sources) picture.sources = cleanKeys(sources)
+  if (!!sources) picture.sources = sources
 
   return picture
 }
