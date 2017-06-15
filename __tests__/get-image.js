@@ -1,4 +1,4 @@
-import {buildWidth, buildSrcSet, getImage} from '../modules/get-image'
+import {buildWidth, getImage} from '../modules/get-image'
 
 const uuid = '18d1c520-c52d-4c34-82a0-7e07dcbcf105'
 const cdnurl = `https://ucarecdn.com/${uuid}/`
@@ -22,13 +22,13 @@ describe('buildWidth', () => {
 
     expect(width).toEqual(expected)
   })
-  test('set width as number', () => {
+  test('width as number', () => {
     const width = buildWidth(768)
     const expected = 768
 
     expect(width).toEqual(expected)
   })
-  test('set width as string', () => {
+  test('width as string', () => {
     const width = buildWidth('50vw')
     const expected = '50vw'
 
@@ -36,71 +36,12 @@ describe('buildWidth', () => {
   })
 })
 
-describe('buildSrcSet', () => {
-  test('empty options', () => {
-    const options = {}
-    const expected = undefined
-
-    expect(buildSrcSet(uuid, options)).toEqual(expected)
-  })
-  test('only width', () => {
-    const options = {width: 1024}
-    const expected = undefined
-
-    expect(buildSrcSet(uuid, options)).toEqual(expected)
-  })
-  test('width and pixel_density as array (one element)', () => {
-    const options = {
-      width: 1024,
-      pixel_density: ['2x'],
-      max_resize: 3000,
-    }
-    const expected = `${cdnurl}-/resize/2048x/-/format/auto/ 2x`
-
-    expect(buildSrcSet(uuid, options)).toEqual(expected)
-  })
-  test('width and pixel_density as array (three elements)', () => {
-    const options = {
-      width: 1024,
-      pixel_density: ['2x', '3x', '4x'],
-      max_resize: 3000,
-    }
-    const expected = `${cdnurl}-/resize/2048x/-/format/auto/ 2x, ${cdnurl}-/resize/3000x/-/format/auto/ 3x`
-
-    expect(buildSrcSet(uuid, options)).toEqual(expected)
-  })
-  test('width and pixel_density as array (one element with oversize)', () => {
-    const options = {
-      width: 1024,
-      pixel_density: ['2x'],
-      oversize: 'dangerously unlimited',
-      max_resize: 3000,
-    }
-    const expected = `${cdnurl}-/resize/2048x/-/format/auto/ 2x`
-
-    expect(buildSrcSet(uuid, options)).toEqual(expected)
-  })
-  test('width and pixel_density as array (three elements with oversize)', () => {
-    const options = {
-      width: 1024,
-      pixel_density: ['2x', '3x', '4x'],
-      oversize: 'dangerously unlimited',
-      max_resize: 3000,
-    }
-    const expected = `${cdnurl}-/resize/2048x/-/format/auto/ 2x, ${cdnurl}-/format/auto/ 3x`
-
-    expect(buildSrcSet(uuid, options)).toEqual(expected)
-  })
-})
-
-describe('getImage', () => {
+describe('getImage', () => { // eslint-disable-line max-statements
   test('undefined options', () => {
     const options = undefined
-    const expected = {}
+    const expected = {src: `${cdnurl}-/format/auto/`}
 
-    expect(() => { // eslint-disable-line max-nested-callbacks
-      getImage(uuid, options)
-    }).toThrow()
+    expect(getImage(uuid, options)).toEqual(expected)
   })
   test('empty options', () => {
     const options = {}
@@ -108,7 +49,7 @@ describe('getImage', () => {
 
     expect(getImage(uuid, options)).toEqual(expected)
   })
-  test('set width as number', () => {
+  test('width as number', () => {
     const options = {width: 1024}
     const expected = {
       src: `${cdnurl}-/resize/1024x/-/format/auto/`,
@@ -118,7 +59,16 @@ describe('getImage', () => {
 
     expect(getImage(uuid, options)).toEqual(expected)
   })
-  test('set width as string', () => {
+  test('wrong width format', () => {
+    const options = {width: '1024xp'}
+    const expected = {
+      src: `${cdnurl}-/format/auto/`,
+      width: '1024xp',
+    }
+
+    expect(getImage(uuid, options)).toEqual(expected)
+  })
+  test('width as string (viewport units)', () => {
     const options = {width: '50vw'}
     const expected = {
       src: `${cdnurl}-/format/auto/`,
@@ -127,7 +77,17 @@ describe('getImage', () => {
 
     expect(getImage(uuid, options)).toEqual(expected)
   })
-  test('set width more than 3000 (without oversize)', () => {
+  test('width as string (pixels)', () => {
+    const options = {width: '500px'}
+    const expected = {
+      src: `${cdnurl}-/resize/500x/-/format/auto/`,
+      srcset: `${cdnurl}-/resize/1000x/-/format/auto/ 2x`,
+      width: '500px',
+    }
+
+    expect(getImage(uuid, options)).toEqual(expected)
+  })
+  test('width more than 3000 (without oversize)', () => {
     const options = {width: 4000}
     const expected = {
       src: `${cdnurl}-/resize/3000x/-/format/auto/`,
@@ -136,7 +96,7 @@ describe('getImage', () => {
 
     expect(getImage(uuid, options)).toEqual(expected)
   })
-  test('set width more than 3000 (with oversize)', () => {
+  test('width more than 3000 (with oversize)', () => {
     const options = {
       width: 4000,
       oversize: 'dangerously unlimited',
