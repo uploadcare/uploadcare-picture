@@ -1,10 +1,25 @@
 /**
+ * [buildName description]
+ * @param  {[type]} name [description]
+ * @param  {[type]} fmt  [description]
+ * @return {[type]}      [description]
+ */
+export function buildName(fmt, nm) {
+  const format = fmt ? `.${fmt}` : ''
+  const name = nm ? `${nm}${format}` : ''
+
+  return name
+}
+
+/**
  * [buildFormat description]
  * @param  {[type]} format [description]
  * @return {[type]}        [description]
  */
-export function buildFormat(format) {
-  return `-/format/${format || 'auto'}/`
+export function buildFormat(format, nm) {
+  const name = buildName(format, nm)
+
+  return `-/format/${format || 'auto'}/${name}`
 }
 
 /**
@@ -16,7 +31,7 @@ export function buildFormat(format) {
 export function maxNumber(width, oversize, maxResize) {
   const number = parseInt(width)
 
-  if (number > maxResize && oversize === 'dangerously unlimited') {
+  if (!number || (number > maxResize && oversize === 'dangerously unlimited')) {
     return ''
   }
   else if (number > maxResize) {
@@ -37,8 +52,10 @@ export function buildResize(resize, opts) {
 
   if (!rsz) rsz = '1x'
 
-  const rex = /.*(\w)$/gi
+  const rex = /\d*(\D+)$/gi
   const sym = rsz.replace(rex, '$1')
+
+  if (!opts || (opts && Object.keys(opts).length <= 0)) throw new Error('Please set options for resize')
 
   if (sym === 'x') {
     if (!opts.width) throw new Error('Please set width')
@@ -51,8 +68,6 @@ export function buildResize(resize, opts) {
   else {
     throw new Error(`pixel_density \'${rsz}\' wrong format`)
   }
-
-  return ''
 }
 
 /**
@@ -64,11 +79,37 @@ export function buildWidthNumber(width) {
   if (typeof width === 'number') {
     return width
   }
-  else if (typeof width === 'string' && (/\wpx$/i).test(width)) {
+  else if (typeof width === 'string' && (/\dpx$/i).test(width)) {
     return parseInt(width)
   }
   else {
     return null
+  }
+}
+
+/**
+ * [buildWidth description]
+ * @param  {[type]} width [description]
+ * @return {[type]}       [description]
+ */
+export function buildWidth(width, opts) {
+  if (width && !(/\d/gi).test(width)) throw new Error('width wrong format')
+
+  if (!width) {
+    return ''
+  }
+  else if (typeof width === 'string' && (/\d+\w?$/gi).test(width)) {
+    return buildResize(width, {
+      oversize: opts.oversize,
+      max_resize: opts.max_resize,
+    })
+  }
+  else {
+    return buildResize(opts.resize, {
+      width,
+      oversize: opts.oversize,
+      max_resize: opts.max_resize,
+    })
   }
 }
 
@@ -79,21 +120,13 @@ export function buildWidthNumber(width) {
  * @return {Object}
  */
 export function buildCDNUrl(uuid, opts) {
-  const width = buildWidthNumber(opts.width)
+  const width = buildWidthNumber(opts.width) || opts.width
   const cdn = 'https://ucarecdn.com/'
   let url = `${cdn}${uuid}/`
 
-  if (!!width) {
-    const resize = buildResize(opts.resize, {
-      width,
-      oversize: opts.oversize,
-      max_resize: opts.max_resize,
-    })
+  url += buildWidth(width, opts)
 
-    url += resize
-  }
-
-  const format = buildFormat(opts.format)
+  const format = buildFormat(opts.format, opts.name)
 
   url += format
 
