@@ -1,1 +1,1 @@
-export {getPictureObject} from './modules/get-picture-object'
+export {getPictureObject as default} from './modules/get-picture-object'
