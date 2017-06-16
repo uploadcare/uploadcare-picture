@@ -9,6 +9,7 @@
     "compat/compat": 2,
     "global-require": [0],
     "import/no-unresolved": [0],
+    "no-plusplus": [0],
     "no-unused-vars": [0],
     "react/jsx-boolean-value": [0],
     "react/jsx-closing-bracket-location": [2, "after-props"],
@@ -55,7 +56,6 @@
         ]
       }
     }],
-    "react/jsx-space-before-closing": [2, "always"],
     "react/jsx-tag-spacing": [2, {
       "closingSlash": "never",
       "beforeSelfClosing": "always",
