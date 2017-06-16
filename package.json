@@ -17,11 +17,13 @@
     "coverageDirectory": "./__coverage__/",
     "collectCoverage": true
   },
-  "devDependencies": {
-    "babel-eslint": "^7.2.3",
+  "dependencies": {
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "codecov": "^2.2.0",
     "eslint": "^4.0.0",
     "eslint-config-uploadcare": "^1.1.0",
