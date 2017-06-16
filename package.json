@@ -13,10 +13,6 @@
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/"
     ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|pcss)$": "identity-obj-proxy"
-    },
     "coverageDirectory": "./__coverage__/",
     "collectCoverage": true
   },
@@ -30,7 +26,6 @@
     "eslint-config-uploadcare": "^1.1.0",
     "eslint-plugin-compat": "^1.0.2",
     "eslint-plugin-react": "^7.0.1",
-    "identity-obj-proxy": "^3.0.0",
     "jest": "^20.0.4"
   }
 }
