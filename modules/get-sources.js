@@ -40,8 +40,8 @@ export function buildSource(uuid, options) {
     const source = cleanKeys({
       type: options.format ? `image/${options.format}` : null,
       media: options.media === 'default'
-      ? null
-      : options.media,
+        ? null
+        : options.media,
       sizes: options.sizes,
       src,
       srcset,
