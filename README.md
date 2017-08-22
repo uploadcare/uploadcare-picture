@@ -1,4 +1,7 @@
 # Uploadcare picture
+
+Uploadcare responsive `picture` component
+
 [![travis](https://travis-ci.org/uploadcare/picture.svg?branch=master)](https://travis-ci.org/uploadcare/picture)
 [![codecov](https://codecov.io/gh/uploadcare/picture/branch/master/graph/badge.svg)](https://codecov.io/gh/uploadcare/picture)
 [![devDependencies](https://david-dm.org/uploadcare/picture/dev-status.svg)](https://david-dm.org/uploadcare/picture)
