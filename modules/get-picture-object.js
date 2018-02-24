@@ -23,7 +23,7 @@ export function checkWarnsEnv(opts) {
 export function getPictureObject(uuid, opts) { // eslint-disable-line max-statements
   const noWarns = checkWarnsEnv(opts)
 
-  if (!uuid) {
+  if (!uuid || typeof uuid !== 'string') {
     throw new Error('You must pass to the function uuid as first argument')
   }
 
@@ -31,11 +31,11 @@ export function getPictureObject(uuid, opts) { // eslint-disable-line max-statem
     throw new Error('With pixel_density you must pass width or sizes')
   }
 
-  if (opts && !opts.width && !noWarns) {
-    console.warn('Setting width is recomended') // eslint-disable-line no-console
+  if (!noWarns && opts && !(opts.width || (opts.sizes && opts.sizes.default))) {
+    console.warn('Setting width or sizes.default is recomended') // eslint-disable-line no-console
   }
 
-  if (opts && (opts.sizes && !opts.sizes.default) && !noWarns) {
+  if (!noWarns && opts && opts.sizes && !opts.sizes.default) {
     console.warn('Empty default size') // eslint-disable-line no-console
   }
 
