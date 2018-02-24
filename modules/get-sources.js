@@ -1,16 +1,6 @@
 import {buildOptions} from './build-options'
-import {buildSrc} from './build-src'
 import {buildSrcSet} from './build-srcset'
 import {cleanKeys} from './clean-keys'
-
-/**
- * [buildWidth description]
- * @param  {[type]} sizes [description]
- * @return {[type]}       [description]
- */
-export function buildWidth(sizes) {
-  return sizes
-}
 
 /**
  * [buildSource description]
@@ -21,16 +11,8 @@ export function buildSource(uuid, options) {
   const sourceNotNeeded = Boolean(!options.format && options.media === 'default')
 
   if (!sourceNotNeeded) {
-    const src = buildSrc(uuid, {
-      width: buildWidth(options.sizes || options.width),
-      oversize: options.oversize,
-      max_resize: options.max_resize,
-      format: options.format,
-      name: options.name,
-    })
     const srcset = buildSrcSet(uuid, {
-      src,
-      width: buildWidth(options.sizes || options.width),
+      width: options.sizes || options.width,
       pixel_density: options.pixel_density,
       oversize: options.oversize,
       max_resize: options.max_resize,
@@ -43,7 +25,6 @@ export function buildSource(uuid, options) {
         ? null
         : options.media,
       sizes: options.sizes,
-      src,
       srcset,
     })
 
