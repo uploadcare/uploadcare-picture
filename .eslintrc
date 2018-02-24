@@ -10,7 +10,7 @@
     "global-require": [0],
     "import/no-unresolved": [0],
     "no-plusplus": [0],
-    "no-unused-vars": [0],
+    "no-unused-vars": [2, {"varsIgnorePattern": "React"}],
     "react/jsx-boolean-value": [0],
     "react/jsx-closing-bracket-location": [2, "after-props"],
     "react/jsx-first-prop-new-line": [2, "multiline"],
