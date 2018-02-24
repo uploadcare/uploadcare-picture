@@ -6,7 +6,7 @@ import {buildPixelDensity} from './build-pixel-density'
  * @return {[type]}      [description]
  */
 export function buildOptions(opts) { // eslint-disable-line max-statements
-  const pixelDensity = buildPixelDensity((opts && opts.pixel_density) || 2)
+  const pixelDensity = buildPixelDensity((opts && opts.pixel_density) || [1, 2])
   const defaults = {
     pixel_density: pixelDensity,
     max_resize: 3000,
