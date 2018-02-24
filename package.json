@@ -20,9 +20,7 @@
   "dependencies": {
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "babel-preset-stage-0": "^6.24.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -32,5 +30,9 @@
     "eslint-plugin-compat": "^1.0.2",
     "eslint-plugin-react": "^7.1.0",
     "jest": "^20.0.4"
+  },
+  "peerDependencies": {
+    "react": ">15.6.2",
+    "react-dom": ">15.6.2"
   }
 }
