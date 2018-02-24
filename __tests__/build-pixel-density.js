@@ -20,8 +20,6 @@ describe('pixelDensityFromNumber', () => {
     expect(pd).toEqual(expected)
   })
   test('pixel density not a number (wrong string)', () => {
-    const expected = [2, 3, 4]
-
     expect(() => { // eslint-disable-line max-nested-callbacks
       pixelDensityFromNumber('string')
     }).toThrow()

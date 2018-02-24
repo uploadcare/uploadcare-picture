@@ -5,7 +5,7 @@ describe('buildOptions', () => {
     const options = '50vw'
     const expected = {
       width: '50vw',
-      pixel_density: ['2x'],
+      pixel_density: ['1x', '2x'],
       max_resize: 3000,
     }
 
@@ -15,7 +15,7 @@ describe('buildOptions', () => {
     const options = 768
     const expected = {
       width: 768,
-      pixel_density: ['2x'],
+      pixel_density: ['1x', '2x'],
       max_resize: 3000,
     }
 
@@ -29,7 +29,7 @@ describe('buildOptions', () => {
     const expected = {
       width: 1024,
       name: 'example',
-      pixel_density: ['2x'],
+      pixel_density: ['1x', '2x'],
       max_resize: 3000,
     }
 

@@ -1,4 +1,5 @@
 import {buildOptions} from './build-options'
+import {buildSrc} from './build-src'
 import {buildSrcSet} from './build-srcset'
 import {cleanKeys} from './clean-keys'
 
@@ -11,6 +12,13 @@ export function buildSource(uuid, options) {
   const sourceNotNeeded = Boolean(!options.format && options.media === 'default')
 
   if (!sourceNotNeeded) {
+    const src = buildSrc(uuid, {
+      width: options.sizes || options.width,
+      oversize: options.oversize,
+      max_resize: options.max_resize,
+      format: options.format,
+      name: options.name,
+    })
     const srcset = buildSrcSet(uuid, {
       width: options.sizes || options.width,
       pixel_density: options.pixel_density,
@@ -26,6 +34,7 @@ export function buildSource(uuid, options) {
         : options.media,
       sizes: options.sizes,
       srcset,
+      src: srcset ? null : src,
     })
 
     return source

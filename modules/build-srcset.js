@@ -29,9 +29,10 @@ function checkSrcSet(opts) {
   const isPixels = (/\wpx$/i).test(opts.width)
   const isNumber = typeof opts.width === 'number'
 
-  return opts.width &&
+  return Boolean(opts.width &&
     opts.pixel_density &&
     (isPixels || isNumber)
+  )
 }
 
 /**

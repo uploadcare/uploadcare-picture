@@ -276,8 +276,7 @@ describe('sizes', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/auto/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/auto/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/auto/ 1x, ${cdnurl}-/resize/1536x/-/format/auto/ 2x`,
           media: '(max-width: 1024px)',
           sizes: '768px',
         },
@@ -298,8 +297,7 @@ describe('sizes', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/auto/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/auto/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/auto/ 1x, ${cdnurl}-/resize/1536x/-/format/auto/ 2x`,
           media: '(max-width: 1024px)',
           sizes: '768px',
         },
@@ -324,14 +322,12 @@ describe('sizes', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/auto/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/auto/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/auto/ 1x, ${cdnurl}-/resize/1536x/-/format/auto/ 2x`,
           media: '(max-width: 1024px)',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/auto/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/auto/ 2x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/auto/ 1x, ${cdnurl}-/resize/2048x/-/format/auto/ 2x`,
           media: '(min-width: 1025px)',
           sizes: '1024px',
         },
@@ -353,14 +349,12 @@ describe('sizes', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/480x/-/format/auto/`,
-          srcset: `${cdnurl}-/resize/960x/-/format/auto/ 2x`,
+          srcset: `${cdnurl}-/resize/480x/-/format/auto/ 1x, ${cdnurl}-/resize/960x/-/format/auto/ 2x`,
           media: '(max-width: 768px)',
           sizes: '480px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/auto/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/auto/ 2x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/auto/ 1x, ${cdnurl}-/resize/2048x/-/format/auto/ 2x`,
           media: '(max-width: 1280px)',
           sizes: '1024px',
         },
@@ -385,8 +379,7 @@ describe('formats and sizes', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/jpg',
           sizes: '768px',
@@ -405,15 +398,13 @@ describe('formats and sizes', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/jpg',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/768x/-/format/webp/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/webp',
           sizes: '768px',
@@ -435,15 +426,13 @@ describe('formats and sizes', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/jpg',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
           media: '(min-width: 1025px)',
           type: 'image/jpg',
           sizes: '1024px',
@@ -465,29 +454,25 @@ describe('formats and sizes', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/jpg',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
           media: '(min-width: 1025px)',
           type: 'image/jpg',
           sizes: '1024px',
         },
         {
-          src: `${cdnurl}-/resize/768x/-/format/webp/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/webp',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/webp/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/webp/ 2x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/webp/ 1x, ${cdnurl}-/resize/2048x/-/format/webp/ 2x`,
           media: '(min-width: 1025px)',
           type: 'image/webp',
           sizes: '1024px',
@@ -510,62 +495,53 @@ describe('formats and sizes', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/jpg',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
           media: '(min-width: 1025px)',
           type: 'image/jpg',
           sizes: '1024px',
         },
         {
-          src: `${cdnurl}-/resize/1280x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/2560x/-/format/jpg/ 2x`,
+          srcset: `${cdnurl}-/resize/1280x/-/format/jpg/ 1x, ${cdnurl}-/resize/2560x/-/format/jpg/ 2x`,
           type: 'image/jpg',
           sizes: '1280px',
         },
         {
-          src: `${cdnurl}-/resize/768x/-/format/webp/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/webp',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/webp/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/webp/ 2x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/webp/ 1x, ${cdnurl}-/resize/2048x/-/format/webp/ 2x`,
           media: '(min-width: 1025px)',
           type: 'image/webp',
           sizes: '1024px',
         },
         {
-          src: `${cdnurl}-/resize/1280x/-/format/webp/`,
-          srcset: `${cdnurl}-/resize/2560x/-/format/webp/ 2x`,
+          srcset: `${cdnurl}-/resize/1280x/-/format/webp/ 1x, ${cdnurl}-/resize/2560x/-/format/webp/ 2x`,
           type: 'image/webp',
           sizes: '1280px',
         },
         {
-          src: `${cdnurl}-/resize/768x/-/format/png/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/png/ 2x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/png/ 1x, ${cdnurl}-/resize/1536x/-/format/png/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/png',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/png/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/png/ 2x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/png/ 1x, ${cdnurl}-/resize/2048x/-/format/png/ 2x`,
           media: '(min-width: 1025px)',
           type: 'image/png',
           sizes: '1024px',
         },
         {
-          src: `${cdnurl}-/resize/1280x/-/format/png/`,
-          srcset: `${cdnurl}-/resize/2560x/-/format/png/ 2x`,
+          srcset: `${cdnurl}-/resize/1280x/-/format/png/ 1x, ${cdnurl}-/resize/2560x/-/format/png/ 2x`,
           type: 'image/png',
           sizes: '1280px',
         },
@@ -600,7 +576,6 @@ describe('pixel_density', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/auto/`,
           srcset: `${cdnurl}-/resize/1536x/-/format/auto/ 2x, ${cdnurl}-/resize/2304x/-/format/auto/ 3x`,
           media: '(max-width: 1024px)',
           sizes: '768px',
@@ -704,7 +679,6 @@ describe('sizes that more than 3000px', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/1024x/-/format/auto/`,
           srcset: `${cdnurl}-/resize/2048x/-/format/auto/ 2x, ${cdnurl}-/resize/3000x/-/format/auto/ 4x`,
           media: '(max-width: 1280px)',
           sizes: '1024px',
@@ -728,9 +702,11 @@ describe('sizes that more than 3000px', () => {
       image: {
         src: `${cdnurl}-/resize/1024x/-/format/auto/`,
         srcset: `${cdnurl}-/resize/2048x/-/format/auto/ 2x, ${cdnurl}-/resize/3000x/-/format/auto/ 4x`,
-        width: 768,
+        width: 1024,
       },
     }
+
+    expect(getPictureObject(uuid, options)).toEqual(expected)
   })
   test('width and array of pixel_density and oversize: dangerously unlimited', () => {
     const options = {
@@ -742,9 +718,11 @@ describe('sizes that more than 3000px', () => {
       image: {
         src: `${cdnurl}-/resize/1024x/-/format/auto/`,
         srcset: `${cdnurl}-/resize/2048x/-/format/auto/ 2x, ${cdnurl}-/format/auto/ 4x`,
-        width: 768,
+        width: 1024,
       },
     }
+
+    expect(getPictureObject(uuid, options)).toEqual(expected)
   })
   test('oversize: dangerously unlimited', () => {
     const options = {
@@ -758,7 +736,6 @@ describe('sizes that more than 3000px', () => {
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/1024x/-/format/auto/`,
           srcset: `${cdnurl}-/resize/2048x/-/format/auto/ 2x, ${cdnurl}-/format/auto/ 4x`,
           media: '(max-width: 1280px)',
           sizes: '1024px',
@@ -783,33 +760,29 @@ describe('real examples', () => {
         'default': '1024px',
       },
       formats: ['jpg', 'webp'],
-      pixel_density: [2, 3, 4],
+      pixel_density: [1, 2, 3, 4],
     }
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/jpg/ 2x, ${cdnurl}-/resize/2304x/-/format/jpg/ 3x, ${cdnurl}-/resize/3000x/-/format/jpg/ 4x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x, ${cdnurl}-/resize/2304x/-/format/jpg/ 3x, ${cdnurl}-/resize/3000x/-/format/jpg/ 4x`,
           type: 'image/jpg',
           media: '(max-width: 1024px)',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/jpg/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/jpg/ 2x, ${cdnurl}-/resize/3000x/-/format/jpg/ 3x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x, ${cdnurl}-/resize/3000x/-/format/jpg/ 3x`,
           type: 'image/jpg',
           sizes: '1024px',
         },
         {
-          src: `${cdnurl}-/resize/768x/-/format/webp/`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/webp/ 2x, ${cdnurl}-/resize/2304x/-/format/webp/ 3x, ${cdnurl}-/resize/3000x/-/format/webp/ 4x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x, ${cdnurl}-/resize/2304x/-/format/webp/ 3x, ${cdnurl}-/resize/3000x/-/format/webp/ 4x`,
           type: 'image/webp',
           media: '(max-width: 1024px)',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/webp/`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/webp/ 2x, ${cdnurl}-/resize/3000x/-/format/webp/ 3x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/webp/ 1x, ${cdnurl}-/resize/2048x/-/format/webp/ 2x, ${cdnurl}-/resize/3000x/-/format/webp/ 3x`,
           type: 'image/webp',
           sizes: '1024px',
         },
@@ -828,18 +801,16 @@ describe('real examples', () => {
       width: 768,
       formats: ['jpg', 'webp'],
       name: 'example',
-      pixel_density: [2, 3, 4],
+      pixel_density: [1, 2, 3, 4],
     }
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/jpg/example.jpg`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/jpg/example.jpg 2x, ${cdnurl}-/resize/2304x/-/format/jpg/example.jpg 3x, ${cdnurl}-/resize/3000x/-/format/jpg/example.jpg 4x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/1536x/-/format/jpg/example.jpg 2x, ${cdnurl}-/resize/2304x/-/format/jpg/example.jpg 3x, ${cdnurl}-/resize/3000x/-/format/jpg/example.jpg 4x`,
           type: 'image/jpg',
         },
         {
-          src: `${cdnurl}-/resize/768x/-/format/webp/example.webp`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/webp/example.webp 2x, ${cdnurl}-/resize/2304x/-/format/webp/example.webp 3x, ${cdnurl}-/resize/3000x/-/format/webp/example.webp 4x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/webp/example.webp 1x, ${cdnurl}-/resize/1536x/-/format/webp/example.webp 2x, ${cdnurl}-/resize/2304x/-/format/webp/example.webp 3x, ${cdnurl}-/resize/3000x/-/format/webp/example.webp 4x`,
           type: 'image/webp',
         },
       ],
@@ -861,34 +832,30 @@ describe('real examples', () => {
       },
       formats: ['jpg', 'webp'],
       name: 'example',
-      pixel_density: [2, 3, 4],
+      pixel_density: [1, 2, 3, 4],
       oversize: 'dangerously unlimited',
     }
     const expected = {
       sources: [
         {
-          src: `${cdnurl}-/resize/768x/-/format/jpg/example.jpg`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/jpg/example.jpg 2x, ${cdnurl}-/resize/2304x/-/format/jpg/example.jpg 3x, ${cdnurl}-/format/jpg/example.jpg 4x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/1536x/-/format/jpg/example.jpg 2x, ${cdnurl}-/resize/2304x/-/format/jpg/example.jpg 3x, ${cdnurl}-/format/jpg/example.jpg 4x`,
           type: 'image/jpg',
           media: '(max-width: 1024px)',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/jpg/example.jpg`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/jpg/example.jpg 2x, ${cdnurl}-/format/jpg/example.jpg 3x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/2048x/-/format/jpg/example.jpg 2x, ${cdnurl}-/format/jpg/example.jpg 3x`,
           type: 'image/jpg',
           sizes: '1024px',
         },
         {
-          src: `${cdnurl}-/resize/768x/-/format/webp/example.webp`,
-          srcset: `${cdnurl}-/resize/1536x/-/format/webp/example.webp 2x, ${cdnurl}-/resize/2304x/-/format/webp/example.webp 3x, ${cdnurl}-/format/webp/example.webp 4x`,
+          srcset: `${cdnurl}-/resize/768x/-/format/webp/example.webp 1x, ${cdnurl}-/resize/1536x/-/format/webp/example.webp 2x, ${cdnurl}-/resize/2304x/-/format/webp/example.webp 3x, ${cdnurl}-/format/webp/example.webp 4x`,
           type: 'image/webp',
           media: '(max-width: 1024px)',
           sizes: '768px',
         },
         {
-          src: `${cdnurl}-/resize/1024x/-/format/webp/example.webp`,
-          srcset: `${cdnurl}-/resize/2048x/-/format/webp/example.webp 2x, ${cdnurl}-/format/webp/example.webp 3x`,
+          srcset: `${cdnurl}-/resize/1024x/-/format/webp/example.webp 1x, ${cdnurl}-/resize/2048x/-/format/webp/example.webp 2x, ${cdnurl}-/format/webp/example.webp 3x`,
           type: 'image/webp',
           sizes: '1024px',
         },
@@ -910,7 +877,7 @@ describe('modifiers', () => {})
 describe('warnings', () => {
   test('empty width', () => {
     getPictureObject(uuid)
-    expect(console.warn).toHaveBeenCalledWith('Setting width is recomended') // eslint-disable-line no-console
+    expect(console.warn).toHaveBeenCalledWith('Setting width or sizes.default is recomended') // eslint-disable-line no-console
   })
 
   test('has media but don\'t have default', () => {
