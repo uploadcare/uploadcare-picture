@@ -17,46 +17,8 @@ function Picture() {
   }
 
   this.run = function(context, opts) {
-    const sizes = {}
-
-    opts.sizes &&
-      opts.sizes.split(',').forEach(function(size) {
-        const splited = size.split('=').map(el => el.trim())
-        const fixed = splited[1].trim()
-        const fixedNum = parseInt(fixed)
-
-        if (fixedNum.toString() === fixed) {
-          sizes[splited[0]] = fixedNum
-        }
-        else {
-          sizes[splited[0]] = fixed
-        }
-      })
-
-    const pixelDensity = opts.pixel_density
-      ? opts.pixel_density.split(',').map(el => {
-        const fixed = el.trim()
-        const fixedNum = parseInt(fixed)
-
-        if (fixedNum.toString() === fixed) {
-          return fixedNum
-        }
-        else {
-          return fixed
-        }
-      })
-      : null
-
-    const options = {
-      width: opts.width,
-      sizes: opts.sizes ? sizes : null,
-      formats: opts.formats && opts.formats.split(',').map(el => el.trim()),
-      pixel_density: pixelDensity,
-      name: opts.name,
-      oversize: opts.oversize,
-    }
-
-    const picture = getPictureObject(opts.uuid, options)
+    const {uuid, ...options} = opts
+    const picture = getPictureObject(uuid, options)
     const pictureString = stringifyPicture(picture)
 
     return pictureString

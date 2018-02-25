@@ -67,9 +67,12 @@ nunjucks.addExtension('UploadcarePicture', new UploadcarePicture())
 
 const template = `{% uploadcarePicture
   uuid='18d1c520-c52d-4c34-82a0-7e07dcbcf105',
-  formats='webp, jpg',
-  sizes='(max-width: 1024px)=768,default=1024',
-  name='example'
+  formats=['webp', 'jpg'],
+  sizes={
+    '(max-width: 1024px)': 768,
+    'default': 1024
+  },
+  name='example',
 %}`
 
 const picture = nunjucks.renderString(template)
