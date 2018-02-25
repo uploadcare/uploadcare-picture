@@ -51,7 +51,7 @@ or use one of [adapters](#adapters)
 
   Array of formats for picture sources
 
-- `pixel_density` (Array&lt;Number | String&gt; | Number | String) optional
+- `pixel_density` (Array&lt;Number | String&gt; | Number | String) optional, default `[1, 2]`
 
   Array of values or value of pixel density for resize picture sources
 
