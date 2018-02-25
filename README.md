@@ -40,18 +40,23 @@ or use one of [adapters](#adapters)
 ## Options
 
 - `width` (String | Number) required if not set `sizes.default`
+
   Width of `<img />` element
 
 - `sizes` (Object) required if not set `width`
+
   In object key is media query and value size of picture for media query
 
 - `formats` (Array<String>) optional, default ['auto']
+
   Array of formats for picture sources
 
 - `pixel_density` (Array<Number | String> | Number | String) optional
+
   Array of values or value of pixel density for resize picture sources
 
 - `name` (String) optional
+
   Name of file
 
 ## Adapters
