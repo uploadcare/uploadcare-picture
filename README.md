@@ -47,11 +47,11 @@ or use one of [adapters](#adapters)
 
   In object key is media query and value size of picture for media query
 
-- `formats` (Array<String>) optional, default ['auto']
+- `formats` (Array&lt;String&gt;) optional, default ['auto']
 
   Array of formats for picture sources
 
-- `pixel_density` (Array<Number | String> | Number | String) optional
+- `pixel_density` (Array&lt;Number | String&gt; | Number | String) optional
 
   Array of values or value of pixel density for resize picture sources
 
