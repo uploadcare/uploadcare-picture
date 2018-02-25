@@ -1,6 +1,6 @@
 # Uploadcare picture
 
-Uploadcare responsive `picture` component
+Uploadcare responsive `<picture>` component using [Uploadcare CDN API](https://uploadcare.com/docs/delivery/file_api/#processing)
 
 [![travis](https://travis-ci.org/uploadcare/picture.svg?branch=master)](https://travis-ci.org/uploadcare/picture)
 [![codecov](https://codecov.io/gh/uploadcare/picture/branch/master/graph/badge.svg)](https://codecov.io/gh/uploadcare/picture)
@@ -10,10 +10,75 @@ Uploadcare responsive `picture` component
 
 ## Install
 
+You can get it on npm
+
+```
+npm install uploadcare-picture
+```
+
 ## Usage
+
+You can use function directly
+
+```js
+import getPictureObject from 'uploadcare-picture'
+
+const uuid = '18d1c520-c52d-4c34-82a0-7e07dcbcf105'
+const options = {
+  sizes: {
+    '(max-width: 1024px)': '768px',
+    'default': '1024px'
+  },
+  formats: ['jpg', 'webp'],
+  name: 'example'
+}
+const picture = getPictureObject(uuid, options)
+```
+
+or use one of adapters
 
 ## Adapters
 
-## Development
+### JSX
+
+```jsx
+import UploadcarePicture from 'uploadcare-picture/adapters/jsx'
+
+const Picture = () =>
+  <UploadcarePicture
+    uuid='18d1c520-c52d-4c34-82a0-7e07dcbcf105'
+    formats={['webp', 'jpg']}
+    sizes={{
+      '(max-width: 1024px)': '768px',
+      'default': 1024,
+    }}
+    name='example' />
+```
+
+### Nunjucks
+
+```js
+import {configure} from 'nunjucks'
+import UploadcarePicture from 'uploadcare-picture/adapters/nunjucks'
+
+const nunjucks = configure('templates', {autoescape: false})
+
+nunjucks.addExtension('UploadcarePicture', new UploadcarePicture())
+
+const template = `{% uploadcarePicture
+  uuid='18d1c520-c52d-4c34-82a0-7e07dcbcf105',
+  formats='webp, jpg',
+  sizes='(max-width: 1024px)=768,default=1024',
+  name='example'
+%}`
+
+const picture = nunjucks.renderString(template)
+```
 
 ## Testing
+
+Run linters and tests
+
+```
+npm test
+```
