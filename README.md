@@ -72,7 +72,7 @@ const template = `{% uploadcarePicture
     '(max-width: 1024px)': 768,
     'default': 1024
   },
-  name='example',
+  name='example'
 %}`
 
 const picture = nunjucks.renderString(template)
