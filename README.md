@@ -1,6 +1,7 @@
 # Uploadcare picture
 
-Uploadcare responsive `<picture>` component using [Uploadcare CDN API](https://uploadcare.com/docs/delivery/file_api/#processing)
+This is a component that makes your `<picture>` responsive using
+Uploadcare [Image Processing](https://uploadcare.com/features/image_processing).
 
 [![travis](https://travis-ci.org/uploadcare/picture.svg?branch=master)](https://travis-ci.org/uploadcare/picture)
 [![codecov](https://codecov.io/gh/uploadcare/picture/branch/master/graph/badge.svg)](https://codecov.io/gh/uploadcare/picture)
@@ -10,7 +11,7 @@ Uploadcare responsive `<picture>` component using [Uploadcare CDN API](https://u
 
 ## Install
 
-You can get it on npm
+You can get the component via npm:
 
 ```
 npm install uploadcare-picture
@@ -18,7 +19,8 @@ npm install uploadcare-picture
 
 ## Usage
 
-You can use function directly
+The function can be used directly or through
+one of the [adapters](#adapters).
 
 ```js
 import getPictureObject from 'uploadcare-picture'
@@ -35,29 +37,27 @@ const options = {
 const picture = getPictureObject(uuid, options)
 ```
 
-or use one of [adapters](#adapters)
-
 ## Options
 
-- `width` (String | Number) required if not set `sizes.default`
+- `width` (String | Number); required; if not set, `sizes.default`
 
-  Width of `<img />` element
+  Sets the width of an `<img />` element
 
-- `sizes` (Object) required if not set `width`
+- `sizes` (Object); required; if not set, `width`
 
-  In object key is media query and value size of picture for media query
+  Keys in the object are media queries while sizes define your picture dimensions for them
 
-- `formats` (Array&lt;String&gt;) optional, default ['auto']
+- `formats` (Array&lt;String&gt;); optional; defaults to ['auto']
 
-  Array of formats for picture sources
+  An array holding the allowed formats for your picture sources
 
-- `pixel_density` (Array&lt;Number | String&gt; | Number | String) optional, default `[1, 2]`
+- `pixel_density` (Array&lt;Number | String&gt; | Number | String); optional; default, `[1, 2]`
 
-  Array of values or value of pixel density for resize picture sources
-
+  An array of pixel density values (or a single value) for resizing your picture sources
+  
 - `name` (String) optional
 
-  Name of file
+  An optional [RFC3986](https://tools.ietf.org/html/rfc3986#section-3.3)-compliant filename.
 
 ## Adapters
 
