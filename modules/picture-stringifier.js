@@ -1,7 +1,3 @@
-/**
- * @param {pictureObject} obj
- * @returns string
- */
 function stringify(obj) {
   let str = '<picture>'
 

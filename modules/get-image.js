@@ -4,23 +4,12 @@ import {buildSrcSet} from './build-srcset'
 import {buildName} from './build-name'
 import {cleanKeys} from './clean-keys'
 
-/**
- * [buildWidth description]
- * @param  {[type]} width [description]
- * @return {[type]}       [description]
- */
 export function buildWidth(width) {
   if (!!width) {
     return width
   }
 }
 
-/**
- * [getImage description]
- * @param  {String} uuid
- * @param  {Object} opts
- * @return {Object}
- */
 export function getImage(uuid, opts) {
   const options = buildOptions(opts)
 

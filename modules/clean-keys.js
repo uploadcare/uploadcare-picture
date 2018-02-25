@@ -1,8 +1,3 @@
-/**
- * [cleanKeys description]
- * @param  {[type]} obj [description]
- * @return {[type]}     [description]
- */
 function cleanKeys(obj) {
   const cleanObj = {}
   const keys = Object.keys(obj)

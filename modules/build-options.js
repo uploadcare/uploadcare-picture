@@ -1,10 +1,5 @@
 import {buildPixelDensity} from './build-pixel-density'
 
-/**
- * [buildOptions description]
- * @param  {[type]} opts [description]
- * @return {[type]}      [description]
- */
 export function buildOptions(opts) { // eslint-disable-line max-statements
   const pixelDensity = buildPixelDensity((opts && opts.pixel_density) || [1, 2])
   const defaults = {

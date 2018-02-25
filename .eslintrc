@@ -62,6 +62,7 @@
       "afterOpening": "never"
     }],
     "react/wrap-multilines": [0],
+    "require-jsdoc": [0]
   },
   "env": {
     "browser": true,

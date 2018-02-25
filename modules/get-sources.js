@@ -3,11 +3,6 @@ import {buildSrc} from './build-src'
 import {buildSrcSet} from './build-srcset'
 import {cleanKeys} from './clean-keys'
 
-/**
- * [buildSource description]
- * @param  {[type]} options [description]
- * @return {[type]}         [description]
- */
 export function buildSource(uuid, options) {
   const sourceNotNeeded = Boolean(!options.format && options.media === 'default')
 
@@ -41,12 +36,6 @@ export function buildSource(uuid, options) {
   }
 }
 
-/**
- * [getSources description]
- * @param  {String} uuid
- * @param  {Object} opts
- * @return {Object}
- */
 export function getSources(uuid, opts) { // eslint-disable-line max-statements
   if (!opts || Object.keys(opts).length <= 0) return null
   if (!opts.sizes && !opts.formats) return null

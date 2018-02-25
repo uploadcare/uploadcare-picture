@@ -1,8 +1,3 @@
-/**
- * [pixelDensityFromNumber description]
- * @param  {[type]} number [description]
- * @return {[type]}        [description]
- */
 export function pixelDensityFromNumber(number) {
   const num = parseInt(number)
   const array = []
@@ -16,11 +11,6 @@ export function pixelDensityFromNumber(number) {
   return array
 }
 
-/**
- * [pixelDensityFromString description]
- * @param  {[type]} string [description]
- * @return {[type]}        [description]
- */
 export function pixelDensityFromString(string) {
   if ((/\d+\w?$/gi).test(string)) {
     return string
@@ -30,11 +20,6 @@ export function pixelDensityFromString(string) {
   }
 }
 
-/**
- * [buildPixelDensityArray description]
- * @param  {[type]} pd [description]
- * @return {[type]}    [description]
- */
 export function buildPixelDensity(pd) {
   let pdCount
   let pdArray = []

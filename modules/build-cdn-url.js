@@ -1,22 +1,11 @@
 import {buildName} from './build-name'
 
-/**
- * [buildFormat description]
- * @param  {[type]} format [description]
- * @return {[type]}        [description]
- */
 export function buildFormat(format, nm) {
   const name = buildName(format, nm)
 
   return `-/format/${format || 'auto'}/${name}`
 }
 
-/**
- * [maxNumber description]
- * @param  {[type]} number   [description]
- * @param  {[type]} oversize [description]
- * @return {[type]}          [description]
- */
 export function maxNumber(width, oversize, maxResize) {
   const number = parseInt(width)
 
@@ -31,11 +20,6 @@ export function maxNumber(width, oversize, maxResize) {
   }
 }
 
-/**
- * [buildResize description]
- * @param  {[type]} resize [description]
- * @return {[type]}        [description]
- */
 export function buildResize(resize, opts) {
   let rsz = resize
 
@@ -59,11 +43,6 @@ export function buildResize(resize, opts) {
   }
 }
 
-/**
- * [buildWidthNumber description]
- * @param  {[type]} width [description]
- * @return {[type]}       [description]
- */
 export function buildWidthNumber(width) {
   if (typeof width === 'number') {
     return width
@@ -76,11 +55,6 @@ export function buildWidthNumber(width) {
   }
 }
 
-/**
- * [buildWidth description]
- * @param  {[type]} width [description]
- * @return {[type]}       [description]
- */
 export function buildWidth(width, opts) {
   if (width && !(/\d/gi).test(width)) throw new Error('width wrong format')
 
@@ -102,12 +76,6 @@ export function buildWidth(width, opts) {
   }
 }
 
-/**
- * [buildCDNUrl description]
- * @param  {String} uuid
- * @param  {Object} opts
- * @return {Object}
- */
 export function buildCDNUrl(uuid, opts) {
   const width = buildWidthNumber(opts.width) || opts.width
   const cdn = 'https://ucarecdn.com/'

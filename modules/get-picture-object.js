@@ -2,11 +2,6 @@ import {getSources} from './get-sources'
 import {getImage} from './get-image'
 import {cleanKeys} from './clean-keys'
 
-/**
- * [checkWarnsEnv description]
- * @param  {[type]} opts [description]
- * @return {[type]}      [description]
- */
 export function checkWarnsEnv(opts) {
   const env = process && process.env && process.env.NODE_ENV === 'production'
   const noWarns = opts && opts.no_warnings
@@ -14,12 +9,6 @@ export function checkWarnsEnv(opts) {
   return !!(env || noWarns)
 }
 
-/**
- * [getPictureObject description]
- * @param  {String} uuid Unique file identifier
- * @param  {Object} options
- * @return {Object} picture object
- */
 export function getPictureObject(uuid, opts) { // eslint-disable-line max-statements
   const noWarns = checkWarnsEnv(opts)
 

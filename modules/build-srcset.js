@@ -1,12 +1,5 @@
 import {buildCDNUrl} from './build-cdn-url'
 
-/**
- * [checkPrevDensity description]
- * @param  {[type]} cur   [description]
- * @param  {[type]} prev  [description]
- * @param  {[type]} width [description]
- * @return {[type]}       [description]
- */
 export function checkLastDensity(uuid, last, opts) {
   const current = buildCDNUrl(uuid, {
     resize: opts.density,
@@ -20,11 +13,6 @@ export function checkLastDensity(uuid, last, opts) {
   return current === last ? null : current
 }
 
-/**
- * [checkSrcSet description]
- * @param  {[type]} options [description]
- * @return {[type]}         [description]
- */
 function checkSrcSet(opts) {
   const isPixels = (/\wpx$/i).test(opts.width)
   const isNumber = typeof opts.width === 'number'
@@ -35,12 +23,6 @@ function checkSrcSet(opts) {
   )
 }
 
-/**
- * [buildSrcSet description]
- * @param  {[type]} width [description]
- * @param  {[type]} pd    [description]
- * @return {[type]}       [description]
- */
 export function buildSrcSet(uuid, opts) {
   let srcset = ''
   let last = opts.src
