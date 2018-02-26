@@ -39,7 +39,7 @@ const picture = getPictureObject(uuid, options)
 
 it will create object like this:
 
-```
+```js
 {
   sources: [
     {
