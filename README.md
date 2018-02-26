@@ -35,7 +35,44 @@ const options = {
 const picture = getPictureObject(uuid, options)
 ```
 
-or use one of [adapters](#adapters)
+it will create object like this:
+
+```
+{
+  sources: [
+    {
+      srcset: `${cdnurl}-/resize/768x/-/format/webp/example.webp 1x, ${cdnurl}-/resize/1536x/-/format/webp/example.webp 2x`,
+      type: 'image/webp',
+      media: '(max-width: 1024px)',
+      sizes: '768px',
+    },
+    {
+      srcset: `${cdnurl}-/resize/1024x/-/format/webp/example.webp 1x, ${cdnurl}-/resize/2048x/-/format/webp/example.webp 2x`,
+      type: 'image/webp',
+      sizes: '1024px',
+    },
+    {
+      srcset: `${cdnurl}-/resize/768x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/1536x/-/format/jpg/example.jpg 2x`,
+      type: 'image/jpg',
+      media: '(max-width: 1024px)',
+      sizes: '768px',
+    },
+    {
+      srcset: `${cdnurl}-/resize/1024x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/2048x/-/format/jpg/example.jpg 2x`,
+      type: 'image/jpg',
+      sizes: '1024px',
+    },
+  ],
+  image: {
+    alt: 'example',
+    src: `${cdnurl}-/resize/1024x/-/format/auto/example`,
+    srcset: `${cdnurl}-/resize/2048x/-/format/auto/example 2x`,
+    sizes: '1024px',
+  },
+}
+```
+
+you can transpile this object to `<picture>` with any library ar framework you like or just use one of [adapters](#adapters)
 
 ## Options
 
