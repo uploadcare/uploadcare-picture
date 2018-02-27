@@ -1,7 +1,15 @@
 # Uploadcare picture
 
-This is a component that makes your `<picture>` responsive using
-Uploadcare [Image Processing](https://uploadcare.com/features/image_processing).
+This is an Uploadcare responsive `<picture>` component. It provides
+more control over image behavior: you can adjust image sizes to different
+media queries, control output formats, etc.
+
+You also get:
+
+* Less code
+* All images served via [Uploadcare CDN](https://uploadcare.com/docs/delivery/)
+* One uploaded image and all of its versions generated on-the-fly
+  via [UC Image Processing](https://uploadcare.com/features/image_processing)
 
 [![travis](https://travis-ci.org/uploadcare/picture.svg?branch=master)](https://travis-ci.org/uploadcare/picture)
 [![codecov](https://codecov.io/gh/uploadcare/picture/branch/master/graph/badge.svg)](https://codecov.io/gh/uploadcare/picture)
@@ -16,6 +24,13 @@ You can get the component via npm:
 ```
 npm install uploadcare-picture
 ```
+
+You would not need an Uploadcare account for testing
+purposes: just use [UUIDs](https://uploadcare.com/docs/concepts/#cdn)
+provided in this readme.
+However, implementing the component requires
+you to have an Uploadcare account; you can get one
+[here](https://uploadcare.com/accounts/signup/).
 
 ## Usage
 
@@ -37,7 +52,7 @@ const options = {
 const picture = getPictureObject(uuid, options)
 ```
 
-it will create object like this:
+The function provides an object in the output, like this:
 
 ```js
 {
@@ -74,25 +89,26 @@ it will create object like this:
 }
 ```
 
-you can transpile this object to `<picture>` with any library ar framework you like
+You can further transpile such objects to `<picture>` via any library
+or framework you like.
 
 ## Options
 
 - `width` (String | Number); required; if not set, `sizes.default`
 
-  Sets the width of an `<img />` element
+  Sets the width of an `<img />` element.
 
 - `sizes` (Object); required; if not set, `width`
 
-  Keys in the object are media queries while sizes define your picture dimensions for them
+  Keys in the object are media queries while sizes define your picture dimensions for them.
 
 - `formats` (Array&lt;String&gt;); optional; defaults to ['auto']
 
-  An array holding the allowed formats for your picture sources
+  An array holding the allowed formats for your picture sources.
 
 - `pixel_density` (Array&lt;Number | String&gt; | Number | String); optional; default, `[1, 2]`
 
-  An array of pixel density values (or a single value) for resizing your picture sources
+  An array of pixel density value(-s) for resizing your picture sources.
   
 - `name` (String) optional
 
@@ -146,3 +162,8 @@ Run linters and tests
 ```
 npm test
 ```
+
+## Feedback
+
+GitHub issues and PRs are welcome. You can also post any questions
+around the UC [Community Area](https://community.uploadcare.com/).
