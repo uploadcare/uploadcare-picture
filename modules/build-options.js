@@ -1,5 +1,7 @@
 import {buildPixelDensity} from './build-pixel-density'
 
+const sortedFormats = ['webp', 'jpg', 'jpeg', 'png', 'auto']
+
 export function buildOptions(opts) { // eslint-disable-line max-statements
   const pixelDensity = buildPixelDensity((opts && opts.pixel_density) || [1, 2])
   const defaults = {
@@ -20,6 +22,12 @@ export function buildOptions(opts) { // eslint-disable-line max-statements
   }
   else if (options && !options.pixel_density) {
     delete options.pixel_density
+  }
+
+  if (options && options.formats) {
+    const formats = sortedFormats.filter(format => options.formats.includes(format))
+
+    options.formats = formats
   }
 
   options = Object.assign({}, defaults, options)
