@@ -160,12 +160,12 @@ describe('format and name', () => {
     const expected = {
       sources: [
         {
-          type: 'image/jpg',
-          src: `${cdnurl}-/format/jpg/`,
-        },
-        {
           type: 'image/webp',
           src: `${cdnurl}-/format/webp/`,
+        },
+        {
+          type: 'image/jpg',
+          src: `${cdnurl}-/format/jpg/`,
         },
       ],
       image: {src: `${cdnurl}-/format/auto/`},
@@ -227,12 +227,12 @@ describe('format and name', () => {
     const expected = {
       sources: [
         {
-          type: 'image/jpg',
-          src: `${cdnurl}-/format/jpg/example.jpg`,
-        },
-        {
           type: 'image/webp',
           src: `${cdnurl}-/format/webp/example.webp`,
+        },
+        {
+          type: 'image/jpg',
+          src: `${cdnurl}-/format/jpg/example.jpg`,
         },
       ],
       image: {
@@ -252,12 +252,12 @@ describe('format and name', () => {
     const expected = {
       sources: [
         {
-          type: 'image/jpg',
-          src: `${cdnurl}-/format/jpg/example.jpg`,
-        },
-        {
           type: 'image/webp',
           src: `${cdnurl}-/format/webp/example.webp`,
+        },
+        {
+          type: 'image/jpg',
+          src: `${cdnurl}-/format/jpg/example.jpg`,
         },
       ],
       image: {
@@ -398,15 +398,15 @@ describe('formats and sizes', () => {
     const expected = {
       sources: [
         {
-          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
-          media: '(max-width: 1024px)',
-          type: 'image/jpg',
-          sizes: '768px',
-        },
-        {
           srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/webp',
+          sizes: '768px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+          media: '(max-width: 1024px)',
+          type: 'image/jpg',
           sizes: '768px',
         },
       ],
@@ -454,18 +454,6 @@ describe('formats and sizes', () => {
     const expected = {
       sources: [
         {
-          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
-          media: '(max-width: 1024px)',
-          type: 'image/jpg',
-          sizes: '768px',
-        },
-        {
-          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
-          media: '(min-width: 1025px)',
-          type: 'image/jpg',
-          sizes: '1024px',
-        },
-        {
           srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/webp',
@@ -475,6 +463,18 @@ describe('formats and sizes', () => {
           srcset: `${cdnurl}-/resize/1024x/-/format/webp/ 1x, ${cdnurl}-/resize/2048x/-/format/webp/ 2x`,
           media: '(min-width: 1025px)',
           type: 'image/webp',
+          sizes: '1024px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+          media: '(max-width: 1024px)',
+          type: 'image/jpg',
+          sizes: '768px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
+          media: '(min-width: 1025px)',
+          type: 'image/jpg',
           sizes: '1024px',
         },
       ],
@@ -495,23 +495,6 @@ describe('formats and sizes', () => {
     const expected = {
       sources: [
         {
-          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
-          media: '(max-width: 1024px)',
-          type: 'image/jpg',
-          sizes: '768px',
-        },
-        {
-          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
-          media: '(min-width: 1025px)',
-          type: 'image/jpg',
-          sizes: '1024px',
-        },
-        {
-          srcset: `${cdnurl}-/resize/1280x/-/format/jpg/ 1x, ${cdnurl}-/resize/2560x/-/format/jpg/ 2x`,
-          type: 'image/jpg',
-          sizes: '1280px',
-        },
-        {
           srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
           media: '(max-width: 1024px)',
           type: 'image/webp',
@@ -526,6 +509,23 @@ describe('formats and sizes', () => {
         {
           srcset: `${cdnurl}-/resize/1280x/-/format/webp/ 1x, ${cdnurl}-/resize/2560x/-/format/webp/ 2x`,
           type: 'image/webp',
+          sizes: '1280px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+          media: '(max-width: 1024px)',
+          type: 'image/jpg',
+          sizes: '768px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
+          media: '(min-width: 1025px)',
+          type: 'image/jpg',
+          sizes: '1024px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/1280x/-/format/jpg/ 1x, ${cdnurl}-/resize/2560x/-/format/jpg/ 2x`,
+          type: 'image/jpg',
           sizes: '1280px',
         },
         {
@@ -765,17 +765,6 @@ describe('real examples', () => {
     const expected = {
       sources: [
         {
-          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x, ${cdnurl}-/resize/2304x/-/format/jpg/ 3x, ${cdnurl}-/resize/3000x/-/format/jpg/ 4x`,
-          type: 'image/jpg',
-          media: '(max-width: 1024px)',
-          sizes: '768px',
-        },
-        {
-          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x, ${cdnurl}-/resize/3000x/-/format/jpg/ 3x`,
-          type: 'image/jpg',
-          sizes: '1024px',
-        },
-        {
           srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x, ${cdnurl}-/resize/2304x/-/format/webp/ 3x, ${cdnurl}-/resize/3000x/-/format/webp/ 4x`,
           type: 'image/webp',
           media: '(max-width: 1024px)',
@@ -784,6 +773,17 @@ describe('real examples', () => {
         {
           srcset: `${cdnurl}-/resize/1024x/-/format/webp/ 1x, ${cdnurl}-/resize/2048x/-/format/webp/ 2x, ${cdnurl}-/resize/3000x/-/format/webp/ 3x`,
           type: 'image/webp',
+          sizes: '1024px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x, ${cdnurl}-/resize/2304x/-/format/jpg/ 3x, ${cdnurl}-/resize/3000x/-/format/jpg/ 4x`,
+          type: 'image/jpg',
+          media: '(max-width: 1024px)',
+          sizes: '768px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x, ${cdnurl}-/resize/3000x/-/format/jpg/ 3x`,
+          type: 'image/jpg',
           sizes: '1024px',
         },
       ],
@@ -806,12 +806,12 @@ describe('real examples', () => {
     const expected = {
       sources: [
         {
-          srcset: `${cdnurl}-/resize/768x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/1536x/-/format/jpg/example.jpg 2x, ${cdnurl}-/resize/2304x/-/format/jpg/example.jpg 3x, ${cdnurl}-/resize/3000x/-/format/jpg/example.jpg 4x`,
-          type: 'image/jpg',
-        },
-        {
           srcset: `${cdnurl}-/resize/768x/-/format/webp/example.webp 1x, ${cdnurl}-/resize/1536x/-/format/webp/example.webp 2x, ${cdnurl}-/resize/2304x/-/format/webp/example.webp 3x, ${cdnurl}-/resize/3000x/-/format/webp/example.webp 4x`,
           type: 'image/webp',
+        },
+        {
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/1536x/-/format/jpg/example.jpg 2x, ${cdnurl}-/resize/2304x/-/format/jpg/example.jpg 3x, ${cdnurl}-/resize/3000x/-/format/jpg/example.jpg 4x`,
+          type: 'image/jpg',
         },
       ],
       image: {
@@ -838,17 +838,6 @@ describe('real examples', () => {
     const expected = {
       sources: [
         {
-          srcset: `${cdnurl}-/resize/768x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/1536x/-/format/jpg/example.jpg 2x, ${cdnurl}-/resize/2304x/-/format/jpg/example.jpg 3x, ${cdnurl}-/format/jpg/example.jpg 4x`,
-          type: 'image/jpg',
-          media: '(max-width: 1024px)',
-          sizes: '768px',
-        },
-        {
-          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/2048x/-/format/jpg/example.jpg 2x, ${cdnurl}-/format/jpg/example.jpg 3x`,
-          type: 'image/jpg',
-          sizes: '1024px',
-        },
-        {
           srcset: `${cdnurl}-/resize/768x/-/format/webp/example.webp 1x, ${cdnurl}-/resize/1536x/-/format/webp/example.webp 2x, ${cdnurl}-/resize/2304x/-/format/webp/example.webp 3x, ${cdnurl}-/format/webp/example.webp 4x`,
           type: 'image/webp',
           media: '(max-width: 1024px)',
@@ -857,6 +846,17 @@ describe('real examples', () => {
         {
           srcset: `${cdnurl}-/resize/1024x/-/format/webp/example.webp 1x, ${cdnurl}-/resize/2048x/-/format/webp/example.webp 2x, ${cdnurl}-/format/webp/example.webp 3x`,
           type: 'image/webp',
+          sizes: '1024px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/768x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/1536x/-/format/jpg/example.jpg 2x, ${cdnurl}-/resize/2304x/-/format/jpg/example.jpg 3x, ${cdnurl}-/format/jpg/example.jpg 4x`,
+          type: 'image/jpg',
+          media: '(max-width: 1024px)',
+          sizes: '768px',
+        },
+        {
+          srcset: `${cdnurl}-/resize/1024x/-/format/jpg/example.jpg 1x, ${cdnurl}-/resize/2048x/-/format/jpg/example.jpg 2x, ${cdnurl}-/format/jpg/example.jpg 3x`,
+          type: 'image/jpg',
           sizes: '1024px',
         },
       ],

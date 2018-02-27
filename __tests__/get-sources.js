@@ -70,15 +70,15 @@ describe('getSources', () => {
     }
     const expected = [
       {
-        srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
-        media: '(max-width: 1024px)',
-        type: 'image/jpg',
-        sizes: 768,
-      },
-      {
         srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
         media: '(max-width: 1024px)',
         type: 'image/webp',
+        sizes: 768,
+      },
+      {
+        srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+        media: '(max-width: 1024px)',
+        type: 'image/jpg',
         sizes: 768,
       },
     ]
@@ -121,23 +121,6 @@ describe('getSources', () => {
     }
     const expected = [
       {
-        srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
-        media: '(max-width: 1024px)',
-        type: 'image/jpg',
-        sizes: 768,
-      },
-      {
-        srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
-        media: '(max-width: 1280px)',
-        type: 'image/jpg',
-        sizes: 1024,
-      },
-      {
-        srcset: `${cdnurl}-/resize/1280x/-/format/jpg/ 1x, ${cdnurl}-/resize/2560x/-/format/jpg/ 2x`,
-        type: 'image/jpg',
-        sizes: 1280,
-      },
-      {
         srcset: `${cdnurl}-/resize/768x/-/format/webp/ 1x, ${cdnurl}-/resize/1536x/-/format/webp/ 2x`,
         media: '(max-width: 1024px)',
         type: 'image/webp',
@@ -152,6 +135,23 @@ describe('getSources', () => {
       {
         srcset: `${cdnurl}-/resize/1280x/-/format/webp/ 1x, ${cdnurl}-/resize/2560x/-/format/webp/ 2x`,
         type: 'image/webp',
+        sizes: 1280,
+      },
+      {
+        srcset: `${cdnurl}-/resize/768x/-/format/jpg/ 1x, ${cdnurl}-/resize/1536x/-/format/jpg/ 2x`,
+        media: '(max-width: 1024px)',
+        type: 'image/jpg',
+        sizes: 768,
+      },
+      {
+        srcset: `${cdnurl}-/resize/1024x/-/format/jpg/ 1x, ${cdnurl}-/resize/2048x/-/format/jpg/ 2x`,
+        media: '(max-width: 1280px)',
+        type: 'image/jpg',
+        sizes: 1024,
+      },
+      {
+        srcset: `${cdnurl}-/resize/1280x/-/format/jpg/ 1x, ${cdnurl}-/resize/2560x/-/format/jpg/ 2x`,
+        type: 'image/jpg',
         sizes: 1280,
       },
       {
