@@ -6,8 +6,8 @@
   "author": "Alexander Kurganov <akurganow@uploadcare.com>",
   "license": "MIT",
   "scripts": {
-    "test": "yarn lint && jest && codecov --token=925e8b0b-2b25-489a-affa-86425c9c8e2b",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "npm run lint && jest && codecov --token=925e8b0b-2b25-489a-affa-86425c9c8e2b"
   },
   "jest": {
     "testRegex": "(/__tests__/.*|.(test|spec)).jsx?$",
