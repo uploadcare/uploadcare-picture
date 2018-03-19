@@ -10,10 +10,6 @@
     "test": "npm run lint && jest && codecov --token=925e8b0b-2b25-489a-affa-86425c9c8e2b"
   },
   "jest": {
-    "testRegex": "(/__tests__/.*|.(test|spec)).jsx?$",
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/"
-    ],
     "coverageDirectory": "./__coverage__/",
     "collectCoverage": true
   },
