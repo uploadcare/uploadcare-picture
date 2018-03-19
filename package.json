@@ -1,14 +1,27 @@
 {
   "name": "uploadcare-picture",
   "version": "0.0.2",
+  "description": "Create responsive picture with Uploadcare CDN.",
   "main": "index.js",
-  "repository": "https://github.com/uploadcare/uploadcare-picture.git",
-  "author": "Alexander Kurganov <akurganow@uploadcare.com>",
-  "license": "MIT",
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint && jest && codecov --token=925e8b0b-2b25-489a-affa-86425c9c8e2b"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uploadcare/uploadcare-picture.git"
+  },
+  "keywords": [
+    "uploadcare",
+    "images",
+    "image",
+    "picture",
+    "responsive"
+  ],
+  "author": "Alexander Kurganov <akurganow@uploadcare.com>",
+  "license": "MIT",
+  "bugs": "https://github.com/uploadcare/uploadcare-picture/issues",
+  "homepage": "https://github.com/uploadcare/uploadcare-picture",
   "jest": {
     "coverageDirectory": "./__coverage__/",
     "collectCoverage": true
