@@ -2,7 +2,7 @@
   "name": "uploadcare-picture",
   "version": "0.0.2",
   "main": "index.js",
-  "repository": "https://github.com/uploadcare/picture.git",
+  "repository": "https://github.com/uploadcare/uploadcare-picture.git",
   "author": "Alexander Kurganov <akurganow@uploadcare.com>",
   "license": "MIT",
   "scripts": {
