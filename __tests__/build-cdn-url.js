@@ -1,5 +1,5 @@
 /* eslint-disable max-nested-callbacks */
-import {buildCDNUrl, buildFormat, maxNumber, buildResize, buildWidthNumber} from '../modules/build-cdn-url'
+import {buildCDNUrl, buildFormat, maxNumber, buildResize, buildWidthNumber} from '../src/modules/build-cdn-url'
 
 const uuid = '18d1c520-c52d-4c34-82a0-7e07dcbcf105'
 const cdnurl = `https://ucarecdn.com/${uuid}/`

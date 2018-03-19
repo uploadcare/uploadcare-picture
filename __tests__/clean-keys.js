@@ -1,4 +1,4 @@
-import {cleanKeys} from '../modules/clean-keys'
+import {cleanKeys} from '../src/modules/clean-keys'
 
 describe('cleanKeys', () => {
   test('clean object', () => {

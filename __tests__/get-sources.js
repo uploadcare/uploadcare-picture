@@ -1,4 +1,4 @@
-import {getSources} from '../modules/get-sources'
+import {getSources} from '../src/modules/get-sources'
 
 const uuid = '18d1c520-c52d-4c34-82a0-7e07dcbcf105'
 const cdnurl = `https://ucarecdn.com/${uuid}/`

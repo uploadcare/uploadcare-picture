@@ -1,6 +1,6 @@
 /* eslint-disable max-len, max-nested-callbacks */
 
-import {getPictureObject, checkWarnsEnv} from '../modules/get-picture-object'
+import {getPictureObject, checkWarnsEnv} from '../src/modules/get-picture-object'
 
 global.console.warn = jest.fn()
 global.console.info = jest.fn()
