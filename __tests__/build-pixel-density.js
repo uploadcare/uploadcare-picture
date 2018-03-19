@@ -1,4 +1,4 @@
-import {buildPixelDensity, pixelDensityFromNumber, pixelDensityFromString} from '../modules/build-pixel-density'
+import {buildPixelDensity, pixelDensityFromNumber, pixelDensityFromString} from '../src/modules/build-pixel-density'
 
 describe('pixelDensityFromNumber', () => {
   test('pixel density as number', () => {

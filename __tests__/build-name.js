@@ -1,4 +1,4 @@
-import {buildName} from '../modules/build-name'
+import {buildName} from '../src/modules/build-name'
 
 describe('buildName', () => {
   test('only name', () => {

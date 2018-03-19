@@ -1,4 +1,10 @@
-# Uploadcare picture
+# Uploadcare Picture
+
+<a href="https://uploadcare.com/?utm_source=github&utm_campaign=uploadcare-picture">
+    <img align="right" width="64" height="64"
+         src="https://ucarecdn.com/2f4864b7-ed0e-4411-965b-8148623aa680/uploadcare-logo-mark.svg"
+         alt="">
+</a>
 
 This is an Uploadcare responsive `<picture>` component. It provides
 more control over image behavior: you can adjust image sizes to different
@@ -11,11 +17,20 @@ You also get:
 * One uploaded image and all of its versions generated on-the-fly
   via [UC Image Processing](https://uploadcare.com/features/image_processing)
 
-[![travis](https://travis-ci.org/uploadcare/picture.svg?branch=master)](https://travis-ci.org/uploadcare/picture)
-[![codecov](https://codecov.io/gh/uploadcare/picture/branch/master/graph/badge.svg)](https://codecov.io/gh/uploadcare/picture)
-[![devDependencies](https://david-dm.org/uploadcare/picture/dev-status.svg)](https://david-dm.org/uploadcare/picture)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bcedec48c564420bba78d5dbcf655f34)](https://www.codacy.com/app/akurganow/picture?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uploadcare/picture&amp;utm_campaign=Badge_Grade)
-[![Stories in Ready](https://badge.waffle.io/uploadcare/picture.svg?label=ready&title=Ready)](http://waffle.io/uploadcare/picture)
+[![NPM version][npm-img]][npm-url] [![Build Status][travis-img]][travis-url]
+ [![Code coverage][codecov-img]][codecov-url] [![devDependencies][devDependencies-img]][devDependencies-url]
+ [![Uploadcare stack on StackShare][stack-img]][stack-url]
+
+[npm-img]: http://img.shields.io/npm/v/uploadcare-picture.svg
+[npm-url]: https://www.npmjs.org/package/uploadcare-picture
+[travis-img]: https://api.travis-ci.org/uploadcare/uploadcare-picture.svg?branch=master
+[travis-url]: https://travis-ci.org/uploadcare/uploadcare-picture
+[stack-img]: https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
+[stack-url]: https://stackshare.io/uploadcare/stacks/
+[codecov-img]: https://codecov.io/gh/uploadcare/uploadcare-picture/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/uploadcare/uploadcare-picture
+[devDependencies-img]: https://david-dm.org/uploadcare/uploadcare-picture/dev-status.svg
+[devDependencies-url]: https://david-dm.org/uploadcare/uploadcare-picture
 
 ## Install
 

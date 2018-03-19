@@ -1,4 +1,4 @@
-import {buildOptions} from '../modules/build-options'
+import {buildOptions} from '../src/modules/build-options'
 
 describe('buildOptions', () => {
   test('options as string', () => {

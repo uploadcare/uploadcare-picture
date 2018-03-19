@@ -46,7 +46,7 @@ export function buildSrcSet(uuid, opts) {
     })
 
     return srcset
-      ? srcset.replace(/\,\s$/gi, '')
+      ? srcset.replace(/,\s$/gi, '')
       : null
   }
 }

@@ -1,5 +1,5 @@
-import getPictureObject from '../index'
-import stringifyPicture from '../modules/picture-stringifier'
+import getPictureObject from '../../index'
+import stringifyPicture from '../../modules/picture-stringifier'
 
 /**
  * Nunjucks uploadcarePicture extension
@@ -19,9 +19,8 @@ function Picture() {
   this.run = function(context, opts) {
     const {uuid, ...options} = opts
     const picture = getPictureObject(uuid, options)
-    const pictureString = stringifyPicture(picture)
 
-    return pictureString
+    return stringifyPicture(picture)
   }
 }
 

@@ -1,1 +1,9 @@
-adapters/*
+.idea
+__coverage__
+__tests__
+src
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc
+.travis.yml

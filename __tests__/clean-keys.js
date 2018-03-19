@@ -1,4 +1,4 @@
-import {cleanKeys} from '../modules/clean-keys'
+import {cleanKeys} from '../src/modules/clean-keys'
 
 describe('cleanKeys', () => {
   test('clean object', () => {
@@ -51,7 +51,7 @@ describe('cleanKeys', () => {
 
     expect(cleanKeys(obj)).toEqual(expected)
   })
-  test('clean embeded', () => {
+  test('clean embedded', () => {
     const obj = {
       key1: {
         k1: 0,

@@ -83,9 +83,7 @@ export function buildCDNUrl(uuid, opts) {
 
   url += buildWidth(width, opts)
 
-  const format = buildFormat(opts.format, opts.name)
-
-  url += format
+  url += buildFormat(opts.format, opts.name)
 
   return url
 }

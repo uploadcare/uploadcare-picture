@@ -1,72 +1,18 @@
 {
-  "extends": "uploadcare",
-  "plugins": ["react", "compat"],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-  },
-  "rules": {
-    "compat/compat": 2,
-    "global-require": [0],
-    "import/no-unresolved": [0],
-    "no-plusplus": [0],
-    "no-unused-vars": [2, {"varsIgnorePattern": "React"}],
-    "react/jsx-boolean-value": [0],
-    "react/jsx-closing-bracket-location": [2, "after-props"],
-    "react/jsx-first-prop-new-line": [2, "multiline"],
-    "react/jsx-indent": [2, 2],
-    "react/jsx-indent-props": [2, 2],
-    "react/jsx-max-props-per-line": [2, {"maximum": 1, "when": "always"}],
-    "react/jsx-no-bind": [2, {"allowArrowFunctions": true}],
-    "react/no-deprecated": [2],
-    "react/no-did-mount-set-state": [2],
-    "react/no-did-update-set-state": [2],
-    "react/no-direct-mutation-state": [2],
-    "react/no-multi-comp": [0],
-    "react/no-unescaped-entities": [2],
-    "react/jsx-no-duplicate-props": [2, {"ignoreCase": true}],
-    "react/prop-types": [0],
-    "react/sort-comp": [2, {
-      "order": [
-        "static-methods",
-        "lifecycle",
-        "/^on.+$/",
-        "everything-else",
-        "rendering"
-      ],
-      "groups": {
-        "rendering": [
-          "/^render.+$/",
-          "render"
-        ],
-        "lifecycle": [
-          "contextTypes",
-          "childContextTypes",
-          "statics",
-          "constructor",
-          "state",
-          "getChildContext",
-          "componentWillMount",
-          "componentDidMount",
-          "componentWillReceiveProps",
-          "shouldComponentUpdate",
-          "componentWillUpdate",
-          "componentDidUpdate",
-          "componentWillUnmount"
-        ]
-      }
-    }],
-    "react/jsx-tag-spacing": [2, {
-      "closingSlash": "never",
-      "beforeSelfClosing": "always",
-      "afterOpening": "never"
-    }],
-    "react/wrap-multilines": [0],
-    "require-jsdoc": [0]
-  },
   "env": {
     "browser": true,
     "node": true,
     "es6": true
   },
+  "extends": "uploadcare",
+  "plugins": ["compat"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "compat/compat": 2,
+    "no-plusplus": [0],
+    "require-jsdoc": [0]
+  }
 }

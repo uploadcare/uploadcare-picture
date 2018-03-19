@@ -1,11 +1,10 @@
 import React from 'react'
-import getPictureObject from '../index'
+import getPictureObject from '../../index'
 
 const renderSource = source => (
   <source
     key={source.srcset}
     srcSet={source.srcset}
-    width={source.width}
     sizes={source.sizes}
     media={source.media}
     type={source.type} />

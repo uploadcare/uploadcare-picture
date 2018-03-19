@@ -1,6 +1,6 @@
 /* eslint-disable max-len, max-nested-callbacks */
 
-import {getPictureObject, checkWarnsEnv} from '../modules/get-picture-object'
+import {getPictureObject, checkWarnsEnv} from '../src/modules/get-picture-object'
 
 global.console.warn = jest.fn()
 global.console.info = jest.fn()
@@ -877,7 +877,7 @@ describe('modifiers', () => {})
 describe('warnings', () => {
   test('empty width', () => {
     getPictureObject(uuid)
-    expect(console.warn).toHaveBeenCalledWith('Setting width or sizes.default is recomended') // eslint-disable-line no-console
+    expect(console.warn).toHaveBeenCalledWith('Setting width or sizes.default is recommended') // eslint-disable-line no-console
   })
 
   test('has media but don\'t have default', () => {

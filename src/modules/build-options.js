@@ -25,9 +25,7 @@ export function buildOptions(opts) { // eslint-disable-line max-statements
   }
 
   if (options && options.formats) {
-    const formats = sortedFormats.filter(format => options.formats.includes(format))
-
-    options.formats = formats
+    options.formats = sortedFormats.filter(format => options.formats.includes(format))
   }
 
   options = Object.assign({}, defaults, options)

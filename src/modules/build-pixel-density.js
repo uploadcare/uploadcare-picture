@@ -21,12 +21,10 @@ export function pixelDensityFromString(string) {
 }
 
 export function buildPixelDensity(pd) {
-  let pdCount
   let pdArray = []
 
   if (typeof pd === 'number') {
-    pdCount = parseInt(pd)
-    pdArray = pixelDensityFromNumber(pdCount === 1 ? 2 : pdCount)
+    pdArray = pixelDensityFromNumber(pd === 1 ? 2 : pd)
   }
   else if (typeof pd === 'string') {
     pdArray = [pixelDensityFromString(pd)]

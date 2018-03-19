@@ -21,7 +21,7 @@ export function getPictureObject(uuid, opts) { // eslint-disable-line max-statem
   }
 
   if (!noWarns && opts && !(opts.width || (opts.sizes && opts.sizes.default))) {
-    console.warn('Setting width or sizes.default is recomended') // eslint-disable-line no-console
+    console.warn('Setting width or sizes.default is recommended') // eslint-disable-line no-console
   }
 
   if (!noWarns && opts && opts.sizes && !opts.sizes.default) {
