@@ -32,13 +32,12 @@ export function getImage(uuid, opts) {
   })
   const alt = buildName(null, options.name) || null
   const imageWidth = buildWidth(options.width)
-  const image = cleanKeys({
+
+  return cleanKeys({
     sizes,
     src,
     srcset,
     width: imageWidth,
     alt,
   })
-
-  return image
 }

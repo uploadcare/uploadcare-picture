@@ -5,7 +5,6 @@ const renderSource = source => (
   <source
     key={source.srcset}
     srcSet={source.srcset}
-    width={source.width}
     sizes={source.sizes}
     media={source.media}
     type={source.type} />

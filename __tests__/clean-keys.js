@@ -51,7 +51,7 @@ describe('cleanKeys', () => {
 
     expect(cleanKeys(obj)).toEqual(expected)
   })
-  test('clean embeded', () => {
+  test('clean embedded', () => {
     const obj = {
       key1: {
         k1: 0,
