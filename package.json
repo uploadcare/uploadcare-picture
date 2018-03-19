@@ -10,7 +10,8 @@
     "clean": "rimraf __coverage__ lib",
     "build": "babel src -d lib",
     "lint": "eslint .",
-    "test": "npm run lint && jest && codecov"
+    "test": "npm run lint && jest && codecov",
+    "prepublishOnly": "npm test && npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
