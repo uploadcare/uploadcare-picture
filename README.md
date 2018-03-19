@@ -17,9 +17,9 @@ You also get:
 * One uploaded image and all of its versions generated on-the-fly
   via [UC Image Processing](https://uploadcare.com/features/image_processing)
 
-[![NPM version][npm-img]][npm-url] [![Build Status][travis-img]][travis]
+[![NPM version][npm-img]][npm-url] [![Build Status][travis-img]][travis-url]
  [![Code coverage][codecov-img]][codecov-url] [![devDependencies][devDependencies-img]][devDependencies-url]
- [![Uploadcare stack on StackShare][stack-img]][stack]
+ [![Uploadcare stack on StackShare][stack-img]][stack-url]
 
 [npm-img]: http://img.shields.io/npm/v/uploadcare-picture.svg
 [npm-url]: https://www.npmjs.org/package/uploadcare-picture
