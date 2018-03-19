@@ -4,6 +4,8 @@
   "description": "Create responsive picture with Uploadcare CDN.",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf __coverage__ lib",
+    "build": "babel src -d lib -s",
     "lint": "eslint .",
     "test": "npm run lint && jest && codecov --token=925e8b0b-2b25-489a-affa-86425c9c8e2b"
   },
@@ -31,13 +33,17 @@
     "react": ">15.6.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-eslint": "8.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "codecov": "3.0.0",
     "eslint": "^4.0.0",
     "eslint-config-uploadcare": "^1.1.0",
     "eslint-plugin-compat": "2.2.0",
     "eslint-plugin-react": "^7.1.0",
-    "jest": "22.4.2"
+    "jest": "22.4.2",
+    "rimraf": "^2.6.2"
   }
 }
