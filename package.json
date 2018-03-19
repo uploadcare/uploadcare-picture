@@ -17,22 +17,20 @@
     "coverageDirectory": "./__coverage__/",
     "collectCoverage": true
   },
-  "dependencies": {
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1"
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">15.6.2"
   },
   "devDependencies": {
     "babel-eslint": "8.2.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "codecov": "3.0.0",
     "eslint": "^4.0.0",
     "eslint-config-uploadcare": "^1.1.0",
     "eslint-plugin-compat": "2.2.0",
     "eslint-plugin-react": "^7.1.0",
     "jest": "22.4.2"
-  },
-  "peerDependencies": {
-    "react": ">15.6.2",
-    "react-dom": ">15.6.2"
   }
 }
