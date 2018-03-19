@@ -1,5 +1,5 @@
 import React from 'react'
-import getPictureObject from '../index'
+import getPictureObject from '../../index'
 
 const renderSource = source => (
   <source

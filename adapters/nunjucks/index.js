@@ -1,5 +1,5 @@
-import getPictureObject from '../index'
-import stringifyPicture from '../modules/picture-stringifier'
+import getPictureObject from '../../index'
+import stringifyPicture from '../../modules/picture-stringifier'
 
 /**
  * Nunjucks uploadcarePicture extension
