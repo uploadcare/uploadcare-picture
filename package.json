@@ -2,13 +2,10 @@
   "name": "uploadcare-picture",
   "version": "1.0.0",
   "description": "Create responsive picture with Uploadcare CDN.",
-  "directories": {
-    "lib": "./lib"
-  },
-  "main": "./lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "clean": "rimraf __coverage__ lib",
-    "build": "babel src -d lib",
+    "clean": "rimraf __coverage__ adapters modules index.js",
+    "build": "babel src -d ./",
     "lint": "eslint .",
     "test": "npm run lint && jest && codecov",
     "prepublishOnly": "npm test && npm run clean && npm run build"
