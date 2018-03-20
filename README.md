@@ -109,25 +109,35 @@ or framework you like.
 
 ## Options
 
-- `width` (String | Number); required; if not set, `sizes.default`
+### width `string|number`
 
-  Sets the width of an `<img />` element.
+Required, if not set `sizes.default`.
 
-- `sizes` (Object); required; if not set, `width`
+Sets the width of an `<img />` element.
 
-  Keys in the object are media queries while sizes define your picture dimensions for them.
+### sizes `object`
 
-- `formats` (Array&lt;String&gt;); optional; defaults to ['auto']
+Required, if not set `width`.
 
-  An array holding the allowed formats for your picture sources.
+Keys in the object are media queries while sizes define your picture dimensions for them.
 
-- `pixel_density` (Array&lt;Number | String&gt; | Number | String); optional; default, `[1, 2]`
+### formats `array<string>`
+ 
+Optional, default values is `['auto']`.
 
-  An array of pixel density value(-s) for resizing your picture sources.
+An array holding the allowed formats for your picture sources.
+
+### pixel_density `array<number|string>|number|string`
+
+Optional, default value is `[1, 2]`.
+
+An array of pixel density value(-s) for resizing your picture sources.
   
-- `name` (String) optional
+### name `string`
+ 
+Optional.
 
-  An optional [RFC3986](https://tools.ietf.org/html/rfc3986#section-3.3)-compliant filename.
+An [RFC3986](https://tools.ietf.org/html/rfc3986#section-3.3)-compliant filename.
 
 ## Adapters
 

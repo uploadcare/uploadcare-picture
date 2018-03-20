@@ -2,4 +2,6 @@
 node_modules
 *.log
 __coverage__
-lib
+adapters
+modules
+index.js
