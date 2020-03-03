@@ -1,4 +1,4 @@
-# Uploadcare Picture
+# [UNSUPPORTED] Uploadcare Picture
 
 <a href="https://uploadcare.com/?utm_source=github&utm_campaign=uploadcare-picture">
     <img align="right" width="64" height="64"
